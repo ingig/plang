@@ -1,0 +1,45 @@
+{
+  "Action": {
+    "FunctionName": "Insert",
+    "Parameters": [
+      {
+        "Type": "string",
+        "Name": "sql",
+        "Value": "insert into flights (id, dohop_id, airlines, origin, destination, price, start_time, end_time, start_date, end_date) values (@id, @dohop_id, @airlines, @origin, @destination, @price, @start_time, @end_time, @start_date, @end_date)"
+      },
+      {
+        "Type": "Dictionary`2",
+        "Name": "Parameters",
+        "Value": {
+          "@id": "%id%",
+          "@dohop_id": "%flight.dohop_id%",
+          "@airlines": "%flight.airlines%",
+          "@origin": "%flight.origin%",
+          "@destination": "%flight.destination%",
+          "@price": "%flight.price%",
+          "@start_time": "%flight.start_time%",
+          "@end_time": "%flight.end_time%",
+          "@start_date": "%flight.start_date%",
+          "@end_date": "%flight.end_date%"
+        }
+      }
+    ],
+    "ReturnValue": {
+      "Type": "Int32",
+      "VariableName": "rows"
+    }
+  },
+  "Text": "insert into flights %flight.dohop_id%, %flight.airlines%, %flight.origin%, %flight.destination%\n        %flight.price%, %flight.start_time%, %flight.end_time%, %flight.start_date%, %flight.end_date%",
+  "Reload": false,
+  "LlmQuestion": {
+    "type": "PLang.Modules.BaseBuilder",
+    "system": "Map user command to this c# function: \r\n\r\n## csharp function ##\r\nInt32 Insert(String sql, Dictionary`2? Parameters)  \r\n## csharp function ##\r\n\r\nvariable is defined with starting and ending %, e.g. %filePath%.\r\nYou MUST modify the user command by adding id to the sql statement and parameter %id%.\r\nYou MUST generate a valid sql statement for SQLiteConnection.\r\nYou MUST provide Parameters if SQL has @parameter.\r\n\n\nYou MUST respond in JSON, scheme:\r\n {\"FunctionName\": string,\n\"Parameters\": [{\"Type\": string,\n\"Name\": string,\n\"Value\": object}],\n\"ReturnValue\"?: {\"Type\": string,\n\"VariableName\": string}}",
+    "question": "command: insert into flights %flight.dohop_id%, %flight.airlines%, %flight.origin%, %flight.destination%\n        %flight.price%, %flight.start_time%, %flight.end_time%, %flight.start_date%, %flight.end_date%",
+    "assistant": "# examples #\r\n\"insert into users, name=%name%\" => sql: \"insert into users (id, name) values (@id, @name)\"\r\n\"insert into tableX, %phone%, write to %rows%\" => sql: \"insert into tableX (id, phone) values (@id, @phone)\"\r\n# examples #\n### flights table info starts ###\n[{\"cid\":0,\"name\":\"id\",\"type\":\"INTEGER\",\"notnull\":0,\"dflt_value\":null,\"pk\":1},{\"cid\":1,\"name\":\"dohop_id\",\"type\":\"TEXT\",\"notnull\":1,\"dflt_value\":null,\"pk\":0},{\"cid\":2,\"name\":\"airlines\",\"type\":\"TEXT\",\"notnull\":1,\"dflt_value\":null,\"pk\":0},{\"cid\":3,\"name\":\"origin\",\"type\":\"TEXT\",\"notnull\":1,\"dflt_value\":null,\"pk\":0},{\"cid\":4,\"name\":\"destination\",\"type\":\"TEXT\",\"notnull\":1,\"dflt_value\":null,\"pk\":0},{\"cid\":5,\"name\":\"price\",\"type\":\"REAL\",\"notnull\":1,\"dflt_value\":null,\"pk\":0},{\"cid\":6,\"name\":\"start_time\",\"type\":\"TEXT\",\"notnull\":1,\"dflt_value\":null,\"pk\":0},{\"cid\":7,\"name\":\"end_time\",\"type\":\"TEXT\",\"notnull\":1,\"dflt_value\":null,\"pk\":0},{\"cid\":8,\"name\":\"start_date\",\"type\":\"DATE\",\"notnull\":1,\"dflt_value\":null,\"pk\":0},{\"cid\":9,\"name\":\"end_date\",\"type\":\"DATE\",\"notnull\":1,\"dflt_value\":null,\"pk\":0}]\n### table info ends ###",
+    "model": "gpt-4",
+    "caching": true,
+    "Reload": false,
+    "PreviousResult": null,
+    "RawResponse": null
+  }
+}

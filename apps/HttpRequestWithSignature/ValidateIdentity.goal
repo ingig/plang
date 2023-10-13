@@ -1,0 +1,2 @@
+ValidateIdentity
+- if %Identity% is empty, give error "You need to sign your requests"

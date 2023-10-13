@@ -1,0 +1,17 @@
+{
+  "Action": {
+    "FunctionName": "RenderHtml",
+    "Parameters": [
+      {
+        "Type": "string",
+        "Name": "html",
+        "Value": "<style>\n/* No custom CSS needed for this task */\n</style>\n\n<div class=\"input-group\">\n  <input type=\"text\" class=\"form-control\" placeholder=\"Type in stuff2\" id=\"search\" name=\"search\">\n  <button class=\"btn btn-outline-secondary\" type=\"button\" id=\"button-addon2\">\n    <i class=\"bi bi-search\"></i>\n  </button>\n</div>\n<script>\ndocument.getElementById('button-addon2').addEventListener('click', function() {\n  var searchValue = document.getElementById('search').value;\n  global.plang.callMethod('Form', {search: searchValue});\n});\n</script>\n"
+      }
+    ],
+    "ReturnValue": null
+  },
+  "Text": "search box,\n    input name and id is \"search\", placeholder \"Type in stuff2\"\n    button in same line as input, button has search icon\n    when button is click  call !Form",
+  "Reload": false,
+  "LlmQuestion": null,
+  "RunOnBuild": false
+}

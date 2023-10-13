@@ -1,0 +1,9 @@
+{
+  "Action": {
+    "CallGoal": "Browse",
+    "Variable": "json"
+  },
+  "Text": "go through %json% call Browse",
+  "Reload": false,
+  "LlmQuestion": null
+}

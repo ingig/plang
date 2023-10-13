@@ -1,0 +1,23 @@
+{
+  "Action": [
+    {
+      "FunctionName": "RunTerminal",
+      "Inputs": {
+        "appExecutableName": "ffmpeg",
+        "parameters": [
+          "-y",
+          "-i",
+          "video/sample.mp4",
+          "audio/sample.mp3"
+        ],
+        "dataOutputVariable": "",
+        "errorDebugInfoOutputVariable": "stream"
+      },
+      "Outputs": {}
+    }
+  ],
+  "Text": "use ffmpeg to convert video/sample.mp4 to audio/sample.mp3, overwrite existing file, write debug info to %stream%",
+  "Reload": false,
+  "LlmQuestion": null,
+  "Tests": null
+}

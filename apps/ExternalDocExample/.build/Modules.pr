@@ -1,0 +1,87 @@
+[
+  {
+    "Name": "WebserverModule",
+    "Type": "native",
+    "Comment": "Start webserver, write to Body, Header, Cookie"
+  },
+  {
+    "Name": "TerminalModule",
+    "Type": "native",
+    "Comment": ""
+  },
+  {
+    "Name": "SeleniumModule",
+    "Type": "native",
+    "Comment": ""
+  },
+  {
+    "Name": "ScheduleModule",
+    "Type": "native",
+    "Comment": ""
+  },
+  {
+    "Name": "OutputModule",
+    "Type": "native",
+    "Comment": ""
+  },
+  {
+    "Name": "LoopModule",
+    "Type": "native",
+    "Comment": ""
+  },
+  {
+    "Name": "LocalOrGlobalVariableModule",
+    "Type": "native",
+    "Comment": "Set & Get local and static variables. Bind events to variable."
+  },
+  {
+    "Name": "LlmModule",
+    "Type": "native",
+    "Comment": ""
+  },
+  {
+    "Name": "ListDictionaryModule",
+    "Type": "native",
+    "Comment": "Add, update, delete and retrieve variables to and from a list or dictionary. It can be local variable or static/global"
+  },
+  {
+    "Name": "HttpModule",
+    "Type": "native",
+    "Comment": ""
+  },
+  {
+    "Name": "FileModule",
+    "Type": "native",
+    "Comment": ""
+  },
+  {
+    "Name": "DbModule",
+    "Type": "native",
+    "Comment": ""
+  },
+  {
+    "Name": "CryptographicModule",
+    "Type": "native",
+    "Comment": ""
+  },
+  {
+    "Name": "ConditionalModule",
+    "Type": "native",
+    "Comment": "Manages if conditions for the user request. Example 1:'if %isValid% is true then', this condition would return true if %isValid% is true. Example 2:'if %address% is empty then', this would check if the %address% variable is empty and return true if it is, else false."
+  },
+  {
+    "Name": "CodeModule",
+    "Type": "native",
+    "Comment": ""
+  },
+  {
+    "Name": "CallGoalModule",
+    "Type": "native",
+    "Comment": "Call another Goal, when ! is prefixed, e.g. !RenameFile"
+  },
+  {
+    "Name": "BlockchainModule",
+    "Type": "native",
+    "Comment": "Use blockchain, create wallet, account info, transfer money"
+  }
+]

@@ -1,0 +1,21 @@
+{
+  "Action": {
+    "Name": "IdentityCheck",
+    "Code": "using System;\r\npublic static class IdentityCheck {\n\tpublic static bool Process(string identity) {\n\t\tif(string.IsNullOrEmpty(identity)) {\n\t\t\tthrow new ArgumentException(\"You need to sign your requests\");\n\t\t}\n\t\treturn true;\n\t}\n}",
+    "Parameters": {}
+  },
+  "Text": "if %Identity% is empty, give error \"You need to sign your requests\"",
+  "Reload": false,
+  "LlmQuestion": {
+    "type": "ConditionalModule",
+    "system": "Act as a senior c# developer, that converts the user statement into a c# code. \r\n\r\nA variable is defined by starting and ending %.\r\nGenerate static class. The code generated should have 1 method with the static method named Process and return bool. \r\nVariables defined in the user statement can be passed into the Process function by value, but only if defined in statement. \r\nStatement should return true\r\n\r\nThe code will not be modified after it's generated.\r\n\r\nName: is CamelCase name of class\r\n\r\nReplace the dot(.) in variables with the letter α e.g. %user.id% to userαid, %product.items[0].title% to productαitemsαtitle\r\nName cannot be: \n\r\nYou MUST respond in JSON, scheme:\r\n{Name:string, Implementation:string, Using:string[]}\r\n\r\nBe Concise",
+    "question": "if %Identity% is empty, give error \"You need to sign your requests\"",
+    "assistant": null,
+    "model": "gpt-4",
+    "caching": true,
+    "Reload": false,
+    "PreviousResult": null,
+    "RawResponse": "{\n  \"Name\": \"IdentityCheck\",\n  \"Implementation\": \"public static class IdentityCheck {\\n\\tpublic static bool Process(string identity) {\\n\\t\\tif(string.IsNullOrEmpty(identity)) {\\n\\t\\t\\tthrow new ArgumentException(\\\"You need to sign your requests\\\");\\n\\t\\t}\\n\\t\\treturn true;\\n\\t}\\n}\",\n  \"Using\": [\"System\"]\n}"
+  },
+  "Tests": null
+}

@@ -1,0 +1,34 @@
+{
+  "GoalName": "Messages",
+  "Method": null,
+  "Comment": null,
+  "GoalSteps": [
+    {
+      "Text": "go through %item.messages%, call !WriteOut",
+      "Comment": null,
+      "ModuleType": "LoopModule",
+      "Name": "IterateAndWriteOut",
+      "Description": "Iterate through the list of messages stored in the variable %item.messages% and call the function WriteOut for each message.",
+      "File": "01. IterateAndWriteOut.pr",
+      "Indent": 0,
+      "Execute": true,
+      "RunOnce": false,
+      "Executed": null,
+      "Generated": "0001-01-01T00:00:00",
+      "WaitForReply": true,
+      "ErrorHandler": {
+        "IgnoreErrors": false,
+        "Except": null
+      },
+      "RetryHandler": {
+        "RetryCount": 0,
+        "RetryDelayInMilliseconds": 0
+      },
+      "Custom": {},
+      "Number": 0,
+      "LlmQuestion": null
+    }
+  ],
+  "Description": null,
+  "FolderPath": "C:\\Users\\Ingi Gauti\\source\\repos\\ingig\\PLangExamples\\apps\\GPT35TrainingDataBuilder\\.build\\FormatToTxt\\Messages"
+}

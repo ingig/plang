@@ -1,0 +1,5 @@
+Setup
+- create table fine_tuning, 
+    columns id(primary), hash(text, not null, unique), system(text, not null), assistant(text, not null), user(text, not null), answer(text, not null), 
+        created(datetime, not null, default now), isValid(bool, null, default null), processed(datetime, null), category(enum, 'training'|'test|bad', null)
+- add column type(string, not null) to fine_tuning

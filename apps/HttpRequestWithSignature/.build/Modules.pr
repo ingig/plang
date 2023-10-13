@@ -1,0 +1,112 @@
+[
+  {
+    "Name": "WindowAppModule",
+    "Type": "native",
+    "Comment": "Native module for window applications"
+  },
+  {
+    "Name": "WebserverModule",
+    "Type": "native",
+    "Comment": "Start webserver, write to Body, Header, Cookie"
+  },
+  {
+    "Name": "TerminalModule",
+    "Type": "native",
+    "Comment": "Terminal/Console access to run external applications"
+  },
+  {
+    "Name": "SeleniumModule",
+    "Type": "native",
+    "Comment": "Run a browser instance, browse a website, input values and extract content"
+  },
+  {
+    "Name": "ScheduleModule",
+    "Type": "native",
+    "Comment": "Sleep and time delay. Cron scheduler"
+  },
+  {
+    "Name": "PythonModule",
+    "Type": "python",
+    "Comment": "Runs python scripts. Parameters can be passed, parameterNames should be equal length as parameterValues. Parameter example name=%name%"
+  },
+  {
+    "Name": "OutputModule",
+    "Type": "native",
+    "Comment": "Outputs and writes out, to the UI a text or a variable. In console, code can ask user and he gives response"
+  },
+  {
+    "Name": "MessageModule",
+    "Type": "native",
+    "Comment": "Send and recieve private messages using Nostr protocol"
+  },
+  {
+    "Name": "LoopModule",
+    "Type": "native",
+    "Comment": "While, for, foreach, loops through a list"
+  },
+  {
+    "Name": "LocalOrGlobalVariableModule",
+    "Type": "native",
+    "Comment": "Set & Get local and static variables. Bind events to variable."
+  },
+  {
+    "Name": "LlmModule",
+    "Type": "native",
+    "Comment": "Ask LLM a question and recieve and answer"
+  },
+  {
+    "Name": "ListDictionaryModule",
+    "Type": "native",
+    "Comment": "Add, update, delete and retrieve variables to and from a list or dictionary. It can be local variable or static/global"
+  },
+  {
+    "Name": "HttpModule",
+    "Type": "native",
+    "Comment": "Make Http request"
+  },
+  {
+    "Name": "HtmlModule",
+    "Type": "native",
+    "Comment": "Native module for handling HTML"
+  },
+  {
+    "Name": "FileModule",
+    "Type": "native",
+    "Comment": "Handle file system access"
+  },
+  {
+    "Name": "EnvironmentSettingsModule",
+    "Type": "native",
+    "Comment": "Various settings for the program, such as culture, date & number formatting"
+  },
+  {
+    "Name": "DbModule",
+    "Type": "native",
+    "Comment": "Database access, select, insert, update, delete and execute raw sql. Handles transactions"
+  },
+  {
+    "Name": "CryptographicModule",
+    "Type": "native",
+    "Comment": "Encrypt, descryption and hashing & verify using bcrypt, compute Sha256Hash, generate & validate Bearer token"
+  },
+  {
+    "Name": "ConditionalModule",
+    "Type": "native",
+    "Comment": "Manages if conditions for the user request. Example 1:'if %isValid% is true then', this condition would return true if %isValid% is true. Example 2:'if %address% is empty then', this would check if the %address% variable is empty and return true if it is, else false."
+  },
+  {
+    "Name": "CodeModule",
+    "Type": ".net",
+    "Comment": "Generate c# code from user description. Only use if no other module is found"
+  },
+  {
+    "Name": "CallGoalModule",
+    "Type": "native",
+    "Comment": "Call another Goal, when ! is prefixed, e.g. !RenameFile"
+  },
+  {
+    "Name": "BlockchainModule",
+    "Type": "native",
+    "Comment": "Use blockchain, create wallet, account info, transfer money, sign message, verify signature"
+  }
+]

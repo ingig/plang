@@ -1,0 +1,34 @@
+{
+  "GoalName": "ShowIdentity",
+  "Method": "GET",
+  "Comment": null,
+  "GoalSteps": [
+    {
+      "Text": "write out %Identity%",
+      "Comment": null,
+      "ModuleType": "OutputModule",
+      "Name": "WriteOutIdentity",
+      "Description": "Output the value of the variable 'Identity' to the user interface.",
+      "File": "01. WriteOutIdentity.pr",
+      "Indent": 0,
+      "Execute": true,
+      "RunOnce": false,
+      "Executed": null,
+      "Generated": "0001-01-01T00:00:00",
+      "WaitForReply": false,
+      "ErrorHandler": {
+        "IgnoreErrors": false,
+        "Except": null
+      },
+      "RetryHandler": {
+        "RetryCount": 0,
+        "RetryDelayInMilliseconds": 0
+      },
+      "Custom": {},
+      "Number": 0,
+      "LlmQuestion": null
+    }
+  ],
+  "Description": null,
+  "FolderPath": "c:\\Users\\Ingi Gauti\\source\\repos\\ingig\\PLangExamples\\apps\\HttpRequestWithSignature\\.build\\api\\ShowIdentity"
+}

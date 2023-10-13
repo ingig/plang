@@ -1,0 +1,7 @@
+Start
+- ask llm: how old is the universe? just return the number { ageOfWorld : number }
+- run python main.py %ageOfWorld%
+    write to %data% and %error% 
+- write out %data% 
+- ask llm: how many people are in the world?
+- write out %Result%

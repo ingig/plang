@@ -1,0 +1,15 @@
+{
+  "Action": {
+    "Name": "RowIdCheck",
+    "Code": "public static class RowIdCheck {\n\tpublic static bool Process(long? rowId) {\n\t\tif(rowId != null) {\n\t\t\treturn true;\n\t\t}\n\t\treturn false;\n\t}\n}",
+    "Using": [
+      "System"
+    ],
+    "Parameters": {
+      "rowId": "long?"
+    }
+  },
+  "Text": "if %rowId% is not null then, return true",
+  "Reload": false,
+  "LlmQuestion": null
+}

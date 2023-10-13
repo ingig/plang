@@ -1,0 +1,5 @@
+Table
+- header: First name, Last name, Email, Phone, Actions
+- body: %users.FirstName%, %users.LastName%, %users.Email%, %users.Phone%
+    edit, call !Edit %users.id%
+    delete call !Delete %users.id%

@@ -1,0 +1,84 @@
+{
+  "GoalName": "TrainModel",
+  "Method": null,
+  "Comment": null,
+  "GoalSteps": [
+    {
+      "Text": "read file training/LoopModuleResult.json into %json%",
+      "Comment": null,
+      "ModuleType": "FileModule",
+      "Name": "ReadJsonFile",
+      "Description": "Read the content of the file named 'LoopModuleResult.json' located in the 'training' directory and store it into the variable '%json%'",
+      "File": "01. ReadJsonFile.pr",
+      "Indent": 0,
+      "Execute": true,
+      "RunOnce": false,
+      "Executed": null,
+      "Generated": "0001-01-01T00:00:00",
+      "WaitForReply": true,
+      "ErrorHandler": {
+        "IgnoreErrors": false,
+        "Except": null
+      },
+      "RetryHandler": {
+        "RetryCount": 0,
+        "RetryDelayInMilliseconds": 0
+      },
+      "Custom": {},
+      "Number": 0,
+      "LlmQuestion": null
+    },
+    {
+      "Text": "curl https://api.openai.com/v1/fine_tuning/jobs \\\n  \\-H \"Content-Type: application/json\"\n  \\-H \"Authorization: Bearer %Settings.OpenAi%\"\n  \\-d '{\n    \"training_file\": \"%json.id%\"\n    \"model\": \"gpt-3.5-turbo\",\n  }'\n  write to %result%",
+      "Comment": null,
+      "ModuleType": "HttpModule",
+      "Name": "MakeAPIRequest",
+      "Description": "Make a HTTP request to the OpenAI API endpoint 'https://api.openai.com/v1/fine_tuning/jobs' with the method 'curl'. The request headers should include 'Content-Type: application/json' and 'Authorization: Bearer %Settings.OpenAi%'. The request body should be a JSON object with 'training_file' set to '%json.id%' and 'model' set to 'gpt-3.5-turbo'. The response of the request should be written to the variable '%result%'.",
+      "File": "02. MakeAPIRequest.pr",
+      "Indent": 0,
+      "Execute": true,
+      "RunOnce": false,
+      "Executed": null,
+      "Generated": "0001-01-01T00:00:00",
+      "WaitForReply": true,
+      "ErrorHandler": {
+        "IgnoreErrors": false,
+        "Except": null
+      },
+      "RetryHandler": {
+        "RetryCount": 0,
+        "RetryDelayInMilliseconds": 0
+      },
+      "Custom": {},
+      "Number": 0,
+      "LlmQuestion": null
+    },
+    {
+      "Text": "write %result% to file training/LoopModuleTrainResult.json",
+      "Comment": null,
+      "ModuleType": "FileModule",
+      "Name": "WriteToFile",
+      "Description": "Write the content of the variable %result% to a file named 'LoopModuleTrainResult.json' located in the 'training' directory.",
+      "File": "03. WriteToFile.pr",
+      "Indent": 0,
+      "Execute": true,
+      "RunOnce": false,
+      "Executed": null,
+      "Generated": "0001-01-01T00:00:00",
+      "WaitForReply": true,
+      "ErrorHandler": {
+        "IgnoreErrors": false,
+        "Except": null
+      },
+      "RetryHandler": {
+        "RetryCount": 0,
+        "RetryDelayInMilliseconds": 0
+      },
+      "Custom": {},
+      "Number": 0,
+      "LlmQuestion": null
+    }
+  ],
+  "Description": null,
+  "FolderPath": "C:\\Users\\Ingi Gauti\\source\\repos\\ingig\\PLangExamples\\apps\\GPT35TrainingDataBuilder\\.build\\TrainModel"
+}

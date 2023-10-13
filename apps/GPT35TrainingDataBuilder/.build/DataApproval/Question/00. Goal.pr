@@ -1,0 +1,84 @@
+{
+  "GoalName": "Question",
+  "Method": null,
+  "Comment": null,
+  "GoalSteps": [
+    {
+      "Text": "ask user \"\n    === System ===\n    %item.system%\n    === System ==\n    === Assistant ===\n    %item.assistant%\n    === Assistant ==\n    === Question ===\n    %item.user%\n    === Question ==\n    Are you happy with this?, Y/N\", write to %result%",
+      "Comment": null,
+      "ModuleType": "OutputModule",
+      "Name": "AskUser",
+      "Description": "Ask the user if they are happy with the system, assistant, and question details. The user's response is stored in the %result% variable.",
+      "File": "01. AskUser.pr",
+      "Indent": 0,
+      "Execute": true,
+      "RunOnce": false,
+      "Executed": null,
+      "Generated": "0001-01-01T00:00:00",
+      "WaitForReply": true,
+      "ErrorHandler": {
+        "IgnoreErrors": false,
+        "Except": null
+      },
+      "RetryHandler": {
+        "RetryCount": 0,
+        "RetryDelayInMilliseconds": 0
+      },
+      "Custom": {},
+      "Number": 0,
+      "LlmQuestion": null
+    },
+    {
+      "Text": "if %result% is \"Y\", %isValid% is true",
+      "Comment": null,
+      "ModuleType": "ConditionalModule",
+      "Name": "CheckResult",
+      "Description": "Check if the value of the variable 'result' is 'Y'. If it is, set the variable 'isValid' to true.",
+      "File": "02. CheckResult.pr",
+      "Indent": 0,
+      "Execute": true,
+      "RunOnce": false,
+      "Executed": null,
+      "Generated": "0001-01-01T00:00:00",
+      "WaitForReply": false,
+      "ErrorHandler": {
+        "IgnoreErrors": false,
+        "Except": null
+      },
+      "RetryHandler": {
+        "RetryCount": 0,
+        "RetryDelayInMilliseconds": 0
+      },
+      "Custom": {},
+      "Number": 0,
+      "LlmQuestion": null
+    },
+    {
+      "Text": "update table fine_tuning where id=%item.id%, set isValid=%isValid%, processed=now",
+      "Comment": null,
+      "ModuleType": "DbModule",
+      "Name": "UpdateFineTuningTable",
+      "Description": "Update the 'fine_tuning' table in the database where the 'id' is equal to the value of 'item.id'. Set the 'isValid' field to the value of 'isValid' and the 'processed' field to the current timestamp.",
+      "File": "03. UpdateFineTuningTable.pr",
+      "Indent": 0,
+      "Execute": true,
+      "RunOnce": false,
+      "Executed": null,
+      "Generated": "0001-01-01T00:00:00",
+      "WaitForReply": false,
+      "ErrorHandler": {
+        "IgnoreErrors": false,
+        "Except": null
+      },
+      "RetryHandler": {
+        "RetryCount": 0,
+        "RetryDelayInMilliseconds": 0
+      },
+      "Custom": {},
+      "Number": 0,
+      "LlmQuestion": null
+    }
+  ],
+  "Description": null,
+  "FolderPath": "C:\\Users\\Ingi Gauti\\source\\repos\\ingig\\PLangExamples\\apps\\GPT35TrainingDataBuilder\\.build\\DataApproval\\Question"
+}

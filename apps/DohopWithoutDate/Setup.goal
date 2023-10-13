@@ -1,0 +1,5 @@
+Setup
+- create table flights, column dohop_id(string, not null), airlines(string, not null)
+    origin(string, not null), destination(string, not null)
+    price(number, not null), start_time(string, not null), end_time(string, not null), 
+    start_date(date, not null), end_date(date, not null)

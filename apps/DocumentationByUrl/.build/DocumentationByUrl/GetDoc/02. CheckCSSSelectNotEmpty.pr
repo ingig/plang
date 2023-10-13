@@ -1,0 +1,15 @@
+{
+  "Action": {
+    "Name": "CheckCssSelectNotEmpty",
+    "Code": "public static bool Process(string cssSelect)\n{\n    return !string.IsNullOrEmpty(cssSelect);\n}",
+    "Using": [
+      "System"
+    ],
+    "Parameters": {
+      "cssSelect": "string"
+    }
+  },
+  "Text": "if %cssSelect% (string) is not empty then",
+  "Reload": false,
+  "LlmQuestion": null
+}

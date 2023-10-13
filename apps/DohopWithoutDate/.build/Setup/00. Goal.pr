@@ -1,0 +1,36 @@
+{
+  "GoalName": "Setup",
+  "Method": null,
+  "Comment": null,
+  "GoalSteps": [
+    {
+      "Text": "create table flights, column dohop_id(string, not null), airlines(string, not null)\n    origin(string, not null), destination(string, not null)\n    price(number, not null), start_time(string, not null), end_time(string, not null), \n    start_date(date, not null), end_date(date, not null)",
+      "Comment": null,
+      "ModuleType": "PLang.Modules.DbModule",
+      "Name": "CreateFlightsTable",
+      "Description": "Create a table named 'flights' with the following columns: 'dohop_id' (string, not null), 'airlines' (string, not null), 'origin' (string, not null), 'destination' (string, not null), 'price' (number, not null), 'start_time' (string, not null), 'end_time' (string, not null), 'start_date' (date, not null), 'end_date' (date, not null).",
+      "PrFileName": "01. CreateFlightsTable.pr",
+      "RelativePrPath": ".build\\Setup\\01. CreateFlightsTable.pr",
+      "Indent": 0,
+      "Execute": true,
+      "RunOnce": true,
+      "Executed": "2023-09-26T15:58:48.9264617+00:00",
+      "Generated": "0001-01-01T00:00:00",
+      "WaitForExecution": true,
+      "ErrorHandler": null,
+      "RetryHandler": null,
+      "CacheHandler": null,
+      "CancellationHandler": null,
+      "Custom": {},
+      "Number": 0,
+      "LlmQuestion": null
+    }
+  ],
+  "Description": null,
+  "Visbility": 0,
+  "GoalFileName": "Setup.goal",
+  "RelativeGoalPath": "\\Setup.goal",
+  "RelativeGoalFolderPath": "\\",
+  "RelativePrPath": ".build\\Setup\\00. Goal.pr",
+  "RelativePrFolderPath": ".build\\Setup"
+}

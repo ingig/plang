@@ -1,0 +1,25 @@
+{
+  "Action": {
+    "Name": "CheckIfIdIsEmpty",
+    "Code": "using System;\r\npublic static class CheckIfIdIsEmpty {\n\t public static bool Process(string id)\n{\n    return string.IsNullOrEmpty(id);\n} \n}",
+    "Parameters": {
+      "id": "string"
+    },
+    "returnType": "bool ",
+    "writeTo": "id"
+  },
+  "Text": "if %id% is empty then",
+  "Reload": false,
+  "LlmQuestion": {
+    "type": "ConditionalModule",
+    "system": "Act as a senior c# developer, that converts the user statement into a c# code. \r\n\r\nA variable is defined by starting and ending %.\r\nGenerate static class. The code generated should have 1 method with the static method named Process and return bool. \r\nVariables defined in the user statement can be passed into the Process function by value, but only if defined in statement. \r\nStatement should return true\r\n\r\nThe code will not be modified after it's generated.\r\n\r\nName: is CamelCase name of class\r\nOutputVariable: variable name if any to write to. Replace dot(.) with underscore(_)\r\n\r\nReplace the dot(.) in variables with the letter α e.g. %user.id% to userαid, %product.items[0].title% to productαitemsαtitle\r\nName cannot be: \n\r\nYou MUST respond in JSON, scheme:\r\n{Name:string, Implementation:string, Using:string[], OutputVariable:string}\r\n\r\nBe Concise",
+    "question": "if %id% is empty then",
+    "assistant": null,
+    "model": "gpt-4",
+    "caching": true,
+    "Reload": false,
+    "PreviousResult": null,
+    "RawResponse": "{\n  \"Name\": \"CheckIfIdIsEmpty\",\n  \"Implementation\": \"public static bool Process(string id)\\n{\\n    return string.IsNullOrEmpty(id);\\n}\",\n  \"Using\": [\"System\"],\n  \"OutputVariable\": \"id\"\n}"
+  },
+  "Tests": null
+}

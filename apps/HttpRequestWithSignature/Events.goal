@@ -1,0 +1,2 @@
+Events
+- before each goal in /api/*.goal,  call !ValidateIdentity

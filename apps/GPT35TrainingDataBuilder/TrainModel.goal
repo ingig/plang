@@ -1,0 +1,11 @@
+TrainModel
+- read file training/LoopModuleResult.json into %json%
+- curl https://api.openai.com/v1/fine_tuning/jobs \
+  \-H "Content-Type: application/json"
+  \-H "Authorization: Bearer %Settings.OpenAi%"
+  \-d '{
+    "training_file": "%json.id%"
+    "model": "gpt-3.5-turbo",
+  }'
+  write to %result%
+- write %result% to file training/LoopModuleTrainResult.json

@@ -1,0 +1,44 @@
+{
+  "Action": {
+    "FunctionName": "AskLlm",
+    "Parameters": [
+      {
+        "Type": "String",
+        "Name": "system",
+        "Value": "parse user input to match this database scheme into a INSERT or UPDATE statment if Id is provided"
+      },
+      {
+        "Type": "String",
+        "Name": "assistant",
+        "Value": ""
+      },
+      {
+        "Type": "String",
+        "Name": "user",
+        "Value": "%input%"
+      },
+      {
+        "Type": "String",
+        "Name": "scheme",
+        "Value": "{honorific_prefix : string, full_name : string, given_name : string, family_name : string, nick_name : json [{name:string, tag:string[], isDefault:bool}], email : json [{ email: string, tag: string[], isDefault:bool }], tel: json [{ email: string, tag: string[], isDefault:bool}], nostrPublicKey : json [{ key: string, tag: string[], isDefault:bool}], walletPublicKey : json [{key:string, tab:string[], isDefault:bool}], address : json [{ street-address: string, postcode: string, city: string, country: string, isDefault: bool}], custom: [{string: string}], created (datetime, default now)}"
+      }
+    ],
+    "ReturnValue": {
+      "Type": "String",
+      "VariableName": "%user%"
+    }
+  },
+  "Text": "[llm] system: parse user input to match this database scheme into a INSERT or UPDATE statment if Id is provided ,\n        {honorific_prefix : string\n        full_name : string\n        given_name : string\n        family_name : string\n        nick_name : json [{name:string, tag:string[], isDefault:bool}]\n        email : json [{ email: string, tag: string[], isDefault:bool }]\n        tel: json [{ email: string, tag: string[], isDefault:bool}]\n        nostrPublicKey : json [{ key: string, tag: string[], isDefault:bool}]\n        walletPublicKey : json [{key:string, tab:string[], isDefault:bool}]\n        address : json [{ street-address: string, postcode: string, city: string, country: string, isDefault: bool}]\n        custom: [{string: string}]\n        created (datetime, default now)\n        }\n        user: %input%\n        write to %user%",
+  "Reload": false,
+  "LlmQuestion": {
+    "type": "PLang.Modules.BaseBuilder",
+    "system": "Parse user command.\r\n\r\nSelect the correct function from list of available functions based on user command\r\n\r\nvariable is defined with starting and ending %, e.g. %filePath%\r\n\r\nIf there is some api key, settings, config replace it with %Settings.Get(\"settingName\", \"defaultValue\", \"Explain\")%\r\nwhere the settingName would be the api key, config key, \r\ndefaultValue for settings is the usual value given, make it \"\" if no value can be default\r\nExplain is an explanation about the setting that novice user can understand.\r\n\r\nJSON scheme information\r\nType: the object type in c#\r\nName: name of the variable\r\nValue: %variable% or hardcode string that should be used\r\nFunctionName: Name of the function to use from list of functions, if no function matches set as \"N/A\"\r\nReturnValue: Only if the function returns a value, else null\n\nYou MUST respond in JSON, scheme:\r\n {\"FunctionName\": String,\n\"Parameters\": [{\"Type\": String,\n\"Name\": String,\n\"Value\": String}],\n\"ReturnValue\": {\"Type\": String,\n\"VariableName\": String} = null}",
+    "question": "command: [llm] system: parse user input to match this database scheme into a INSERT or UPDATE statment if Id is provided ,\n        {honorific_prefix : string\n        full_name : string\n        given_name : string\n        family_name : string\n        nick_name : json [{name:string, tag:string[], isDefault:bool}]\n        email : json [{ email: string, tag: string[], isDefault:bool }]\n        tel: json [{ email: string, tag: string[], isDefault:bool}]\n        nostrPublicKey : json [{ key: string, tag: string[], isDefault:bool}]\n        walletPublicKey : json [{key:string, tab:string[], isDefault:bool}]\n        address : json [{ street-address: string, postcode: string, city: string, country: string, isDefault: bool}]\n        custom: [{string: string}]\n        created (datetime, default now)\n        }\n        user: %input%\n        write to %user%",
+    "assistant": "## functions available defined in csharp ##\r\nvoid AskLlm(String system, String assistant, String user, String scheme, String? model = gpt-4, Double? tempature = 0, Double? topP = 0, Double? frequencyPenalty = 0, Double? presencePenalty = 0, Boolean? cacheResponse = True) \n\r\n## functions available ends ##\r\n## defined variables ##\r\n\t\t\t\t%input%, %user%\r\n## defined variables ##\nThe following user request is for for constructing a message to LLM engine\r\n\r\nDetermine what part is system, assistant and user properties. If you cannot map it, the whole user request should be on user property\r\nDetermine the scheme, it is the json scheme that the llm is expected to return, this is required and cannot be empty string. Default scheme is {Result:string}\r\n",
+    "model": "gpt-4",
+    "caching": true,
+    "Reload": false,
+    "PreviousResult": null,
+    "RawResponse": "{\"FunctionName\": \"AskLlm\",\n\"Parameters\": [\n    {\"Type\": \"String\", \"Name\": \"system\", \"Value\": \"parse user input to match this database scheme into a INSERT or UPDATE statment if Id is provided\"},\n    {\"Type\": \"String\", \"Name\": \"assistant\", \"Value\": \"\"},\n    {\"Type\": \"String\", \"Name\": \"user\", \"Value\": \"%input%\"},\n    {\"Type\": \"String\", \"Name\": \"scheme\", \"Value\": \"{honorific_prefix : string, full_name : string, given_name : string, family_name : string, nick_name : json [{name:string, tag:string[], isDefault:bool}], email : json [{ email: string, tag: string[], isDefault:bool }], tel: json [{ email: string, tag: string[], isDefault:bool}], nostrPublicKey : json [{ key: string, tag: string[], isDefault:bool}], walletPublicKey : json [{key:string, tab:string[], isDefault:bool}], address : json [{ street-address: string, postcode: string, city: string, country: string, isDefault: bool}], custom: [{string: string}], created (datetime, default now)}\"}\n],\n\"ReturnValue\": {\"Type\": \"String\", \"VariableName\": \"%user%\"}}"
+  }
+}

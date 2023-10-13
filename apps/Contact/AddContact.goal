@@ -1,0 +1,18 @@
+AddContact
+- [llm] system: parse user input to match this database scheme into a INSERT or UPDATE statment if Id is provided ,
+        {honorific_prefix : string
+        full_name : string
+        given_name : string
+        family_name : string
+        nick_name : json [{name:string, tag:string[], isDefault:bool}]
+        email : json [{ email: string, tag: string[], isDefault:bool }]
+        tel: json [{ email: string, tag: string[], isDefault:bool}]
+        nostrPublicKey : json [{ key: string, tag: string[], isDefault:bool}]
+        walletPublicKey : json [{key:string, tab:string[], isDefault:bool}]
+        address : json [{ street-address: string, postcode: string, city: string, country: string, isDefault: bool}]
+        custom: [{string: string}]
+        created (datetime, default now)
+        }
+        user: %input%
+        write to %user%
+- insert %user% into Contact table 

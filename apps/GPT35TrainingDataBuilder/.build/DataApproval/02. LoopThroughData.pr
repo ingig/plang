@@ -1,0 +1,10 @@
+{
+  "Action": {
+    "CallGoal": "Question",
+    "Variable": "data"
+  },
+  "Text": "loop through %data% call Question",
+  "Reload": false,
+  "LlmQuestion": null,
+  "Tests": null
+}

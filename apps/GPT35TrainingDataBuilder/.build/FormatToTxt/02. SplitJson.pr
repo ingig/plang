@@ -1,0 +1,27 @@
+{
+  "Action": {
+    "Name": "SplitJsonOnNewLine",
+    "Code": "using System;\r\npublic static class SplitJsonOnNewLine\n{\n    public static void Process(string json, out string[] messages)\n    {\n        if (string.IsNullOrEmpty(json))\n        {\n            throw new Exception(\"The provided JSON is empty or null.\");\n        }\n        messages = json.Split(new[] { '\\n' }, StringSplitOptions.None);\n    }\n}",
+    "Using": [
+      "System"
+    ],
+    "Parameters": {
+      "json": "string",
+      "messages": "string[]"
+    }
+  },
+  "Text": "codemodule: split %json% on new line, write to %messages%",
+  "Reload": false,
+  "LlmQuestion": {
+    "type": "CodeModule",
+    "system": "Act as a senior c# developer, that converts the user statement into a c# code. \r\n\r\nA variable is defined by starting and ending %.\r\nGenerate static class. The class generated should have 1 method with the static method named Process and return void. \r\nVariables defined in the user statement can be passed into the Process function by value, but only if defined in statement. \r\n\r\nThe code will not be modified after it's generated.\r\nIf condition fails, throw Exception\r\nException message should be for non-technical user\r\n\r\nName: is CamelCase name of class\r\nAssemblies: dll to reference to compile using Roslyn\r\nVariables that user expect to be written to should be provided with out parameter in the function.\r\nReplace the dot(.) in variables with the letter α e.g. %user.id% to userαid, %product.items[0].title% to productαitemsαtitle\r\n\r\nYou MUST respond in JSON, scheme:\r\n{Name:string, Implementation:string, Using:string[], Assemblies:string[]}\r\n\r\nBe Concise",
+    "question": "codemodule: split %json% on new line, write to %messages%",
+    "assistant": null,
+    "model": "gpt-4",
+    "caching": true,
+    "Reload": false,
+    "PreviousResult": null,
+    "RawResponse": "{\n  \"Name\": \"SplitJsonOnNewLine\",\n  \"Implementation\": \"public static class SplitJsonOnNewLine\\n{\\n    public static void Process(string json, out string[] messages)\\n    {\\n        if (string.IsNullOrEmpty(json))\\n        {\\n            throw new Exception(\\\"The provided JSON is empty or null.\\\");\\n        }\\n        messages = json.Split(new[] { '\\\\n' }, StringSplitOptions.None);\\n    }\\n}\",\n  \"Using\": [\"System\"],\n  \"Assemblies\": []\n}"
+  },
+  "Tests": null
+}

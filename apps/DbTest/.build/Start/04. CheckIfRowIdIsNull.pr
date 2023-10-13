@@ -1,0 +1,15 @@
+{
+  "Action": {
+    "Name": "ProcessRowId",
+    "Code": "public static bool Process(long? rowId)\n{\n    if(rowId == null)\n    {\n        return true;\n    }\n    return false;\n}",
+    "Using": [
+      "System"
+    ],
+    "Parameters": {
+      "rowId": "long?"
+    }
+  },
+  "Text": "if %rowId% is null  then",
+  "Reload": false,
+  "LlmQuestion": null
+}

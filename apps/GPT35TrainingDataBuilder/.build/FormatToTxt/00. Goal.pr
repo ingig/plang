@@ -1,0 +1,84 @@
+{
+  "GoalName": "FormatToTxt",
+  "Method": null,
+  "Comment": null,
+  "GoalSteps": [
+    {
+      "Text": "read training/ModuleDecider.jsonl into %json%",
+      "Comment": null,
+      "ModuleType": "FileModule",
+      "Name": "ReadJsonFile",
+      "Description": "Read the content of the file named 'training/ModuleDecider.jsonl' and store it into the variable %json%",
+      "File": "01. ReadJsonFile.pr",
+      "Indent": 0,
+      "Execute": true,
+      "RunOnce": false,
+      "Executed": null,
+      "Generated": "0001-01-01T00:00:00",
+      "WaitForReply": true,
+      "ErrorHandler": {
+        "IgnoreErrors": false,
+        "Except": null
+      },
+      "RetryHandler": {
+        "RetryCount": 0,
+        "RetryDelayInMilliseconds": 0
+      },
+      "Custom": {},
+      "Number": 0,
+      "LlmQuestion": null
+    },
+    {
+      "Text": "codemodule: split %json% on new line, write to %messages%",
+      "Comment": null,
+      "ModuleType": "CodeModule",
+      "Name": "SplitJson",
+      "Description": "Split the content of the variable %json% on each new line and write the result to the variable %messages%",
+      "File": "02. SplitJson.pr",
+      "Indent": 0,
+      "Execute": true,
+      "RunOnce": false,
+      "Executed": null,
+      "Generated": "0001-01-01T00:00:00",
+      "WaitForReply": true,
+      "ErrorHandler": {
+        "IgnoreErrors": false,
+        "Except": null
+      },
+      "RetryHandler": {
+        "RetryCount": 0,
+        "RetryDelayInMilliseconds": 0
+      },
+      "Custom": {},
+      "Number": 0,
+      "LlmQuestion": null
+    },
+    {
+      "Text": "go through each %messages% call !Messages",
+      "Comment": null,
+      "ModuleType": "LoopModule",
+      "Name": "LoopThroughMessages",
+      "Description": "Iterate through each message in the 'messages' variable and call the 'Messages' function for each one.",
+      "File": "03. LoopThroughMessages.pr",
+      "Indent": 0,
+      "Execute": true,
+      "RunOnce": false,
+      "Executed": null,
+      "Generated": "0001-01-01T00:00:00",
+      "WaitForReply": true,
+      "ErrorHandler": {
+        "IgnoreErrors": false,
+        "Except": null
+      },
+      "RetryHandler": {
+        "RetryCount": 0,
+        "RetryDelayInMilliseconds": 0
+      },
+      "Custom": {},
+      "Number": 0,
+      "LlmQuestion": null
+    }
+  ],
+  "Description": null,
+  "FolderPath": "C:\\Users\\Ingi Gauti\\source\\repos\\ingig\\PLangExamples\\apps\\GPT35TrainingDataBuilder\\.build\\FormatToTxt"
+}

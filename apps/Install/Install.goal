@@ -1,0 +1,14 @@
+Start
+- get https://api.github.com/repos/ingig/plang/contents/apps/%appName%/ into %json%
+	no authentication is needed
+- go through %json% call Browse
+
+Browse
+- if %item.size% == 0 then
+	- Create directory %item.path%
+	- get https://api.github.com/repos/ingig/plang/contents/%item.path%, write to %json2%
+		no authentication needed
+	- loop %json2% call Browse
+- if %item.size% is > 0 then
+	- get %item.download_url% , write to %code%
+	- write %code% to file "%item.path%"

@@ -1,0 +1,23 @@
+{
+  "Action": {
+    "FunctionName": "Write",
+    "Inputs": {
+      "text": "%results%",
+      "writeToBuffer": false
+    },
+    "Outputs": {}
+  },
+  "Text": "!ShowResult result=%results%",
+  "Reload": false,
+  "LlmQuestion": {
+    "system": "\r\n\t\t\tParse user command.\r\n\r\nSelect the correct function from list of available functions based on user command\r\n\r\nvariable is defined with starting and ending %, e.g. %filePath%\r\n\r\nIf there is some api key, settings, config replace it with %Settings.Get(\"settingName\", \"defaultValue\", \"Explain\")%\r\nwhere the settingName would be the api key, config key, \r\ndefaultValue is the usual value given, make it \"\" if no value can be default\r\nExplain is an explanation about the setting that novice user can understand.\r\n\r\nInputs: are parameters that are required for the function and %variables% needed\r\nOutputs: Dictionary<string, string> where key is type of return, value is variable name, if function is not void. Use best matching defined variable, override the variable if needed\r\nFunctionName: Name of the function to use from list of functions, if no function matches set as \"N/A\"\r\n\\r\\n\\r\\nYou MUST respond in JSON, scheme\\r\\n \"Action\": {\r\n  \"FunctionName\": \"String\",\r\n  \"Inputs\": {\r\n    \"key\": \"String\",\r\n    \"value\": \"Object\"\r\n  },\r\n  \"Outputs\": {\r\n    \"key\": \"String\",\r\n    \"value\": \"Object\"\r\n  }\r\n}",
+    "question": "command: !ShowResult result=%results%",
+    "assistant": "\r\n## functions available defined in csharp ##\r\nWrite(String? text, Boolean? writeToBuffer = False)\nGetAppPath(String? appName)\n\r\n## functions available ends ##\r\n## defined variables ##\r\n{\"results\":{\"Events\":[],\"value\":null,\"type\":\"System.Threading.Tasks.Task, System.Private.CoreLib, Version=7.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e\",\"Initiated\":false}}\r\n## defined variables ##",
+    "model": "gpt-4",
+    "caching": true,
+    "Reload": false,
+    "PreviousResult": null,
+    "RawResponse": "{\n  \"Action\": {\n    \"FunctionName\": \"Write\",\n    \"Inputs\": {\n      \"text\": \"%results%\",\n      \"writeToBuffer\": false\n    },\n    \"Outputs\": {}\n  }\n}"
+  },
+  "Tests": null
+}

@@ -1,0 +1,24 @@
+{
+  "Action": {
+    "Name": "AppTypeCheck",
+    "Code": "public static class AppTypeCheck {\n\t public static bool Process(string appType) { return appType == \"console\"; } \n}",
+    "Parameters": {
+      "appType": "string"
+    },
+    "returnType": "bool ",
+    "writeTo": "appType"
+  },
+  "Text": "if %appType% == console",
+  "Reload": false,
+  "LlmQuestion": {
+    "system": "Act as a senior c# developer, that converts the user statement into a c# code. \r\n\r\nA variable is defined by starting and ending %.\r\nGenerate static class. The code generated should have 1 method with the static method named Process and return bool. \r\nVariables defined in the user statement can be passed into the Process function by value, but only if defined in statement. \r\nStatement should return true\r\n\r\nThe code will not be modified after it's generated.\r\n\r\nName: is CamelCase name of class\r\nOutputVariable: variable name if any to write to. Replace dot(.) with underscore(_)\r\n\r\nReplace the dot(.) in variables with the letter α e.g. %user.id% to userαid, %product.items[0].title% to productαitemsαtitle\r\nName cannot be: \n\r\nYou MUST respond in JSON, scheme:\r\n{Name:string, Implementation:string, Using:string[], OutputVariable:string}\r\n\r\nBe Concise",
+    "question": "if %appType% == console",
+    "assistant": null,
+    "model": "gpt-4",
+    "caching": true,
+    "Reload": false,
+    "PreviousResult": null,
+    "RawResponse": "{\n  \"Name\": \"AppTypeCheck\",\n  \"Implementation\": \"public static bool Process(string appType) { return appType == \\\"console\\\"; }\",\n  \"Using\": [],\n  \"OutputVariable\": \"appType\"\n}"
+  },
+  "Tests": null
+}

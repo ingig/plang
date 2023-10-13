@@ -1,0 +1,33 @@
+{
+  "GoalName": "OutputStreamer",
+  "Method": null,
+  "Comment": null,
+  "GoalSteps": [
+    {
+      "Text": "write out %stream%",
+      "Comment": null,
+      "ModuleType": "OutputModule",
+      "Name": "WriteOutStream",
+      "Description": "Write out the content of the variable %stream%",
+      "File": "01. WriteOutStream.pr",
+      "Indent": 0,
+      "Execute": true,
+      "RunOnce": false,
+      "Executed": null,
+      "Generated": "0001-01-01T00:00:00",
+      "WaitForReply": true,
+      "ErrorHandler": {
+        "IgnoreErrors": false,
+        "Except": null
+      },
+      "RetryHandler": {
+        "RetryCount": 0,
+        "RetryDelayInMilliseconds": 0
+      },
+      "Custom": {},
+      "Number": 0
+    }
+  ],
+  "Description": null,
+  "FolderPath": "C:\\Users\\Ingi Gauti\\source\\repos\\ingig\\plang\\apps\\Ffmpeg\\.build\\Ffmpeg\\OutputStreamer"
+}

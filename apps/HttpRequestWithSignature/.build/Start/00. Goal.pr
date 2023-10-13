@@ -1,0 +1,59 @@
+{
+  "GoalName": "Start",
+  "Method": null,
+  "Comment": null,
+  "GoalSteps": [
+    {
+      "Text": "Call !DoRequest and forget",
+      "Comment": null,
+      "ModuleType": "CallGoalModule",
+      "Name": "CallDoRequest",
+      "Description": "Invoke the function 'DoRequest' and do not wait for a response.",
+      "File": "01. CallDoRequest.pr",
+      "Indent": 0,
+      "Execute": true,
+      "RunOnce": false,
+      "Executed": null,
+      "Generated": "0001-01-01T00:00:00",
+      "WaitForReply": false,
+      "ErrorHandler": {
+        "IgnoreErrors": false,
+        "Except": null
+      },
+      "RetryHandler": {
+        "RetryCount": 0,
+        "RetryDelayInMilliseconds": 0
+      },
+      "Custom": {},
+      "Number": 0,
+      "LlmQuestion": null
+    },
+    {
+      "Text": "start webserver, port 13333",
+      "Comment": null,
+      "ModuleType": "WebserverModule",
+      "Name": "StartWebserver",
+      "Description": "Start a webserver on port 13333",
+      "File": "02. StartWebserver.pr",
+      "Indent": 0,
+      "Execute": true,
+      "RunOnce": false,
+      "Executed": null,
+      "Generated": "0001-01-01T00:00:00",
+      "WaitForReply": true,
+      "ErrorHandler": {
+        "IgnoreErrors": false,
+        "Except": null
+      },
+      "RetryHandler": {
+        "RetryCount": 0,
+        "RetryDelayInMilliseconds": 0
+      },
+      "Custom": {},
+      "Number": 0,
+      "LlmQuestion": null
+    }
+  ],
+  "Description": null,
+  "FolderPath": "c:\\Users\\Ingi Gauti\\source\\repos\\ingig\\PLangExamples\\apps\\HttpRequestWithSignature\\.build\\Start"
+}

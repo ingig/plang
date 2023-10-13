@@ -1,0 +1,40 @@
+{
+  "Action": {
+    "FunctionName": "RunGoal",
+    "Parameters": [
+      {
+        "Type": "String",
+        "Name": "goalName",
+        "Value": "DoRequest"
+      },
+      {
+        "Type": "String",
+        "Name": "appName",
+        "Value": ""
+      },
+      {
+        "Type": "Boolean",
+        "Name": "waitForResponse",
+        "Value": "False"
+      }
+    ],
+    "ReturnValue": {
+      "Type": "Void",
+      "VariableName": ""
+    }
+  },
+  "Text": "Call !DoRequest and forget",
+  "Reload": false,
+  "LlmQuestion": {
+    "type": "PLang.Modules.CallGoalModule",
+    "system": "\r\nParse user command, to match the parameters needed for the RunGoal function\r\n\r\n(AppName.)?GoalName is prefixed with !\r\nvariables are defined with starting and ending %\r\nUser might send in variable with his call as input\r\n\r\nExample:\r\n!ParseText then ParseText is goalName\r\n!Gmail.Search %query%, then Gmail is appName and Search is goalName, and %query% is parameters\r\n\n\nYou MUST respond in JSON, scheme\r\n \"Action\": {\r\n  \"FunctionName\": \"String\",\r\n  \"Parameters\": [\r\n    {\r\n      \"Type\": \"String\",\r\n      \"Name\": \"String\",\r\n      \"Value\": \"String\"\r\n    }\r\n  ],\r\n  \"ReturnValue\": {\r\n    \"Type\": \"String\",\r\n    \"VariableName\": \"String\"\r\n  }\r\n}",
+    "question": "command: Call !DoRequest and forget",
+    "assistant": "## functions available defined in csharp ##\r\nvoid RunGoal(String goalName, String? appName, Dictionary`2? parameters, Boolean? waitForResponse = True, Int32? delayWhenNotWaitingInMilliseconds = 50) \n\r\n## functions available ends ##\nThese goals are available to choose from ",
+    "model": "gpt-4",
+    "caching": true,
+    "Reload": false,
+    "PreviousResult": null,
+    "RawResponse": "{\n  \"Action\": {\n    \"FunctionName\": \"RunGoal\",\n    \"Parameters\": [\n      {\n        \"Type\": \"String\",\n        \"Name\": \"goalName\",\n        \"Value\": \"DoRequest\"\n      },\n      {\n        \"Type\": \"String\",\n        \"Name\": \"appName\",\n        \"Value\": \"\"\n      },\n      {\n        \"Type\": \"Boolean\",\n        \"Name\": \"waitForResponse\",\n        \"Value\": \"False\"\n      }\n    ],\n    \"ReturnValue\": {\n      \"Type\": \"Void\",\n      \"VariableName\": \"\"\n    }\n  }\n}"
+  },
+  "Tests": null
+}

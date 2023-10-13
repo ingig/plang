@@ -1,0 +1,4 @@
+@db=npgsql/lib/net7.0/Npgsql.dll
+
+Setup
+- Create table users, columns name(not null), email(not null)

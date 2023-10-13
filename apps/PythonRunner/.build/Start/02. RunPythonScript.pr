@@ -1,0 +1,46 @@
+{
+  "Action": [
+    {
+      "FunctionName": "RunPythonScript",
+      "Parameters": [
+        {
+          "Type": "String",
+          "Name": "fileName",
+          "Value": "main.py"
+        },
+        {
+          "Type": "String[]",
+          "Name": "parameterValues",
+          "Value": "%ageOfWorld%"
+        },
+        {
+          "Type": "String[]",
+          "Name": "parameterNames",
+          "Value": "ageOfWorld"
+        },
+        {
+          "Type": "Boolean",
+          "Name": "useNamedArguments",
+          "Value": "False"
+        },
+        {
+          "Type": "Boolean",
+          "Name": "useTerminal",
+          "Value": "False"
+        },
+        {
+          "Type": "String",
+          "Name": "pythonPath",
+          "Value": ""
+        }
+      ],
+      "ReturnValue": {
+        "Type": "Dictionary`2",
+        "VariableName": "data"
+      }
+    }
+  ],
+  "Text": "run python main.py %ageOfWorld%\n    write to %data% and %error% ",
+  "Reload": false,
+  "LlmQuestion": null
+}

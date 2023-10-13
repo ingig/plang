@@ -1,0 +1,9 @@
+UploadFile
+- read file training/LoopModule.jsonl, write into %json% 
+- post https://api.openai.com/v1/files, 
+    \-F purpose="fine-tune"
+    \-F file="%json.JsonSafe()%"
+    bearer %Settings.OpenAi%
+    multipart
+    write to %result%
+- write %result% to training/LoopModuleResult.json

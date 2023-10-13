@@ -1,0 +1,2 @@
+Setup
+- create tbl comments, columns id, text, created(datetime, now)

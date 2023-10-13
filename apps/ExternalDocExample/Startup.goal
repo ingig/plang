@@ -1,0 +1,4 @@
+Startup
+/ https://alexwohlbruck.github.io/cat-facts/docs/
+- GET https://cat-fact.herokuapp.com/facts write to %facts%
+- write out %facts[0].text%

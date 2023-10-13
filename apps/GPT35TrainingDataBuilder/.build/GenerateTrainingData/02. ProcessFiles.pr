@@ -1,0 +1,10 @@
+{
+  "Action": {
+    "CallGoal": "ProcessFile",
+    "Variable": "files"
+  },
+  "Text": "go through each %files%, call !ProcessFile",
+  "Reload": false,
+  "LlmQuestion": null,
+  "Tests": null
+}

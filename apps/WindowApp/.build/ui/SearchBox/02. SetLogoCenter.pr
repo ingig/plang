@@ -1,0 +1,17 @@
+{
+  "Action": {
+    "FunctionName": "RenderHtml",
+    "Parameters": [
+      {
+        "Type": "string",
+        "Name": "html",
+        "Value": "<style>\n</style>\n\n<div class=\"d-flex justify-content-center\">\n    <img src=\"https://plang.is/logo.png\" alt=\"Logo\" style=\"max-height:150px;\">\n</div>\n<script>\n</script>\n"
+      }
+    ],
+    "ReturnValue": null
+  },
+  "Text": "set logo in center, https://plang.is/logo.png, max 150px height",
+  "Reload": false,
+  "LlmQuestion": null,
+  "RunOnBuild": false
+}

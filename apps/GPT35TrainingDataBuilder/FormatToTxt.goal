@@ -1,0 +1,14 @@
+FormatToTxt
+- read training/ModuleDecider.jsonl into %json%
+- codemodule: split %json% on new line, write to %messages%
+- go through each %messages% call !Messages
+
+Messages
+- go through %item.messages%, call !WriteOut
+
+WriteOut
+- write "
+    %item.role%
+    %item.content%
+    ====" 
+    to output/file output_%idx%.txt

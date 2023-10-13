@@ -1,0 +1,16 @@
+{
+  "Action": "\n<script>\nfunction extractContent() {\n\tlet html = document.querySelector('%html%').innerHTML;\n\tlet content = document.querySelector('%cssSelect%').innerHTML;\n\tdocument.querySelector('%html%').innerHTML = '';\n\tdocument.querySelector('%__Docs__%').innerHTML = content;\n}\n</script>\n\n<button onclick=\"extractContent()\">Extract Content</button>\n",
+  "Text": "extract content from %html% using %cssSelect%, clear html, write to %__Docs__%",
+  "Reload": false,
+  "LlmQuestion": {
+    "type": "PLang.Modules.BaseBuilder",
+    "system": "Convert this user command to html using bootstrap 5.1 css framework. \r\nthe html, head, body is already provided, you only need to generate the content from the div.\r\ndo not include css or js unless user specifies it.\r\nbootstrap css and js is include\r\nfontawesome css is include\r\nonclick, submit events should have a call command\r\n\r\nGoalName is required for click and events\r\n\r\nExample: \r\n- call !Google.Search => !Google.Search = GoalName\r\n- call !DoStuff => !DoStuff = GoalName\r\n- call !SaveUesr => !SaveUesr = GoalName\r\n\r\nthe button should call a function. You should give a name to the function.\r\nThe function should have the following setup to \r\n\r\nfunction nameOfFunction() {\r\n\tlet message = {\r\n\t\tGoalName: \"GoalName\"\r\n\t\tParams: {\r\n\t\t\tinputName : inputValue\r\n\t\t\t...\r\n\t\t}\r\n\t};\r\n\twindow.chrome.webview.postMessage(JSON.stringify(message));\r\n}\r\n\r\nYou must return with the whole html/javascript/css content inside ```html, no extra text to explain, be concise\r\n\r\n\n\nOnly write the raw html and javascript no summary, no extra text to explain, be concise",
+    "question": "command: extract content from %html% using %cssSelect%, clear html, write to %__Docs__%",
+    "assistant": "## functions available defined in csharp ##\r\nString RenderHtml(String html) \n\r\n## functions available ends ##\r\n## defined variables ##\r\n\t\t\t\t%html%, %cssSelect%, %__Docs__%\r\n## defined variables ##",
+    "model": "gpt-4",
+    "caching": true,
+    "Reload": false,
+    "PreviousResult": null,
+    "RawResponse": "```html\n<script>\nfunction extractContent() {\n\tlet html = document.querySelector('%html%').innerHTML;\n\tlet content = document.querySelector('%cssSelect%').innerHTML;\n\tdocument.querySelector('%html%').innerHTML = '';\n\tdocument.querySelector('%__Docs__%').innerHTML = content;\n}\n</script>\n\n<button onclick=\"extractContent()\">Extract Content</button>\n```"
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "GoalName": "Setup",
+  "Method": null,
+  "Comment": null,
+  "GoalSteps": [
+    {
+      "Text": "create tbl comments, columns id, text, created(datetime, now)",
+      "Comment": null,
+      "ModuleType": "PLang.Modules.DbModule",
+      "Name": "CreateCommentsTable",
+      "Description": "Create a new table named 'comments' with columns 'id', 'text', and 'created'. The 'created' column should be of type datetime and default to the current time.",
+      "PrFileName": "01. CreateCommentsTable.pr",
+      "RelativePrPath": ".build\\Setup\\01. CreateCommentsTable.pr",
+      "Indent": 0,
+      "Execute": true,
+      "RunOnce": true,
+      "Executed": "2023-09-17T18:16:24.0583825+00:00",
+      "Generated": "0001-01-01T00:00:00",
+      "WaitForExecution": true,
+      "ErrorHandler": null,
+      "RetryHandler": null,
+      "CacheHandler": null,
+      "CancellationHandler": null,
+      "Custom": {},
+      "Number": 0,
+      "LlmQuestion": null
+    }
+  ],
+  "Description": null,
+  "Visbility": 0,
+  "GoalFileName": "Setup.goal",
+  "RelativeGoalPath": "\\Setup.goal",
+  "RelativeGoalFolderPath": "\\",
+  "RelativePrPath": ".build\\Setup\\00. Goal.pr",
+  "RelativePrFolderPath": ".build\\Setup"
+}

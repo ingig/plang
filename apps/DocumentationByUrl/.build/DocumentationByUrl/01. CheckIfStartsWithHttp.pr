@@ -1,0 +1,13 @@
+{
+  "Action": {
+    "Name": "CheckIfStartsWithHttp",
+    "Code": "\npublic static class CheckIfStartsWithHttp\n{\n    public static bool Process(string stepαComment)\n    {\n        return stepαComment.StartsWith(\"http\");\n    }\n}",
+    "Using": [
+      "System"
+    ],
+    "Parameters": {}
+  },
+  "Text": "if %Step.Comment% starts with http",
+  "Reload": false,
+  "LlmQuestion": null
+}

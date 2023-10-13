@@ -1,0 +1,7 @@
+SearchBox
+- center content, horizontaly and vertically, give good padding
+- set logo in center, https://plang.is/logo.png, max 150px height
+- search box, 
+    input name and id is "search", placeholder "Type in stuff2"
+    button in same line as input, button has search icon
+    when button is click  call !Form

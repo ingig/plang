@@ -1,0 +1,17 @@
+{
+  "Action": "<style>\nbody {\n    margin: 0;\n    padding: 0;\n    box-sizing: border-box;\n    height: 100vh;\n    display: flex;\n    justify-content: center;\n    align-items: center;\n}\n</style>\n\n<div class=\"d-flex justify-content-center align-items-center\" style=\"height: 100vh;\">\n    %step2%\n</div>\n<script>\n</script>\n",
+  "Text": "centered horizontaly and vertically",
+  "Reload": false,
+  "LlmQuestion": {
+    "type": "PLang.Modules.BaseBuilder",
+    "system": "Create the html, javascript and css needed from the user command using Bootstrap 5.1. \r\n\r\nGoal has series of steps where this user command is, it is only to provide context. Steps start with dash(-), steps can have sub steps\r\n\r\nvariables are defined with starting and ending %. They will be provided to the javascript as global.plang.get('%variableName%').\r\n\r\nGoals are prefixed with !, they are call for calling a method, e.g. Call !NewUser. They should call the funcion global.plang.callMethod(name:string, parameters:object)\r\n\r\nif the current step has sister or sub steps, then put %step1%, %stepN% instead of the html that will be provided by sister or sub steps later. Do not generate any html for sub steps.  \r\n\r\nHTML comments and <!-- --> are NOT allowed\r\n\r\nJavascript should be vanilla Javascript. popper.min.js and bootstrap.min.js are available. \r\n\r\nUse @Razor templating engine to go through lists, displaying object or property, see example later\r\n\r\nCss should be using up to date css standards. colors should be in rgb.\r\n\r\nIf a feedback is needed to the user, provide the solution also for that, if it needs javascript, provide javascript, if it needs custom css, provide css\r\n\r\nYou must return ```html, ```css, ```javascript, \r\nNo extra text to explain, be concise\r\n\n\nOnly write the raw html and javascript no summary, no extra text to explain, be concise",
+    "question": "command: centered horizontaly and vertically",
+    "assistant": "\r\n### For context ###\r\n(Goal) Form\n- (%step1%) centered horizontaly and vertically\n- (%step2%) form\n- (%step3%) create fieldset for 'User info',\n        inputs: Name, Email, Phone\n- (%step4%) divider\n- (%step5%) create input password\n        min length=8\n        pattern=\"\"\n- (%step6%) submit button, \"Save\"\n        call !SaveUserInfo\r\n### For context ###\r\n### Razor ###\r\nvariable in plural are lists, single is an object. use the variable name as the name for the list and when looping through the list. \r\nExample for a tr in a table.\r\n\r\n@foreach (var task in tasks)\r\n{\r\n    <tr>\r\n        <td>@task .Description</td>\r\n        <td>Due date: @task.DueDate</td>\r\n    </tr>\r\n}\r\n\r\n<h3>@book.Title</h3>\r\n\r\n@{\r\n    bool isUserLoggedIn = true;\r\n}\r\n\r\n@if (isUserLoggedIn)\r\n{\r\n    <p>Welcome back, @user.Username!</p>\r\n}\r\nelse\r\n{\r\n    <p>Please log in.</p>\r\n}\r\n### Razor ###",
+    "model": "gpt-4",
+    "caching": true,
+    "Reload": false,
+    "PreviousResult": null,
+    "RawResponse": "```html\n<div class=\"d-flex justify-content-center align-items-center\" style=\"height: 100vh;\">\n    %step2%\n</div>\n```\n\n```css\nbody {\n    margin: 0;\n    padding: 0;\n    box-sizing: border-box;\n    height: 100vh;\n    display: flex;\n    justify-content: center;\n    align-items: center;\n}\n```\n\n```javascript\n```"
+  },
+  "RunOnBuild": false
+}

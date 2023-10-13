@@ -1,0 +1,34 @@
+{
+  "GoalName": "ProcessFile",
+  "Method": null,
+  "Comment": null,
+  "GoalSteps": [
+    {
+      "Text": "go through each %item% call !ProcessQuestion",
+      "Comment": null,
+      "ModuleType": "LoopModule",
+      "Name": "LoopThroughItems",
+      "Description": "Iterate through each item and call the function 'ProcessQuestion' for each item.",
+      "File": "01. LoopThroughItems.pr",
+      "Indent": 0,
+      "Execute": true,
+      "RunOnce": false,
+      "Executed": null,
+      "Generated": "0001-01-01T00:00:00",
+      "WaitForReply": true,
+      "ErrorHandler": {
+        "IgnoreErrors": false,
+        "Except": null
+      },
+      "RetryHandler": {
+        "RetryCount": 0,
+        "RetryDelayInMilliseconds": 0
+      },
+      "Custom": {},
+      "Number": 0,
+      "LlmQuestion": null
+    }
+  ],
+  "Description": null,
+  "FolderPath": "C:\\Users\\Ingi Gauti\\source\\repos\\ingig\\PLangExamples\\apps\\GPT35TrainingDataBuilder\\.build\\GenerateTrainingData\\ProcessFile"
+}

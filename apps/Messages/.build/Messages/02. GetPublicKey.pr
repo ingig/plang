@@ -1,0 +1,23 @@
+{
+  "Action": {
+    "FunctionName": "GetPublicKey",
+    "Parameters": [],
+    "ReturnValue": {
+      "Type": "String",
+      "VariableName": "publicKey"
+    }
+  },
+  "Text": "[message] get my public key for messages write to %publicKey%\n    cache for 5 minutes from now",
+  "Reload": false,
+  "LlmQuestion": {
+    "type": "PLang.Modules.BaseBuilder",
+    "system": "Parse user command.\r\n\r\nSelect the correct function from list of available functions based on user command\r\n\r\nvariable is defined with starting and ending %, e.g. %filePath%\r\n\r\nIf there is some api key, settings, config replace it with %Settings.Get(\"settingName\", \"defaultValue\", \"Explain\")%\r\nwhere the settingName would be the api key, config key, \r\ndefaultValue for settings is the usual value given, make it \"\" if no value can be default\r\nExplain is an explanation about the setting that novice user can understand.\r\n\r\nJSON scheme information\r\nType: the object type in c#\r\nName: name of the variable\r\nValue: %variable% or hardcode string that should be used\r\nFunctionName: Name of the function to use from list of functions, if no function matches set as \"N/A\"\r\nReturnValue: Only if the function returns a value, else null\n\nYou MUST respond in JSON, scheme:\r\n {\"FunctionName\": String,\n\"Parameters\": [{\"Type\": String,\n\"Name\": String,\n\"Value\": String}],\n\"ReturnValue\": {\"Type\": String,\n\"VariableName\": String} = null}",
+    "question": "command: [message] get my public key for messages write to %publicKey%\n    cache for 5 minutes from now",
+    "assistant": "## functions available defined in csharp ##\r\nString GetPublicKey() \nvoid Listen(String variableName, String goalName, String? appName, Nullable`1? listenFromDateTime) \nvoid SendPrivateMessageToMyself(String content) \nvoid SendPrivateMessage(String content, String npubReceiverPublicKey) \nvoid GetPrivateMessage() \n\r\n## functions available ends ##\r\n## defined variables ##\r\n\t\t\t\t%publicKey%\r\n## defined variables ##",
+    "model": "gpt-4",
+    "caching": true,
+    "Reload": false,
+    "PreviousResult": null,
+    "RawResponse": "{\"FunctionName\": \"GetPublicKey\",\n\"Parameters\": [],\n\"ReturnValue\": {\"Type\": \"String\",\n\"VariableName\": \"publicKey\"}}"
+  }
+}

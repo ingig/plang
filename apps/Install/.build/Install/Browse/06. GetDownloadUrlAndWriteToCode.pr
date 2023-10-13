@@ -1,0 +1,21 @@
+{
+  "Action": [
+    {
+      "FunctionName": "GetVariable",
+      "Parameters": [
+        {
+          "Type": "String",
+          "Name": "key",
+          "Value": "%item.download_url%"
+        }
+      ],
+      "ReturnValue": {
+        "Type": "String",
+        "VariableName": "downloadUrl"
+      }
+    }
+  ],
+  "Text": "get %item.download_url% , write to %code%",
+  "Reload": false,
+  "LlmQuestion": null
+}

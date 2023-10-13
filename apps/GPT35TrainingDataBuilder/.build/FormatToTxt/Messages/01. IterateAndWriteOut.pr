@@ -1,0 +1,10 @@
+{
+  "Action": {
+    "CallGoal": "WriteOut",
+    "Variable": "item.messages"
+  },
+  "Text": "go through %item.messages%, call !WriteOut",
+  "Reload": false,
+  "LlmQuestion": null,
+  "Tests": null
+}

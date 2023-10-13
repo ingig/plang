@@ -1,0 +1,17 @@
+{
+  "Action": {
+    "FunctionName": "RenderHtml",
+    "Parameters": [
+      {
+        "Type": "string",
+        "Name": "html",
+        "Value": "<style>\nbody {\n    margin: 0;\n    padding: 0;\n    box-sizing: border-box;\n}\n</style>\n\n<div class=\"d-flex justify-content-center align-items-center\" style=\"height: 100vh; padding: 20px;\">\n    %step2%\n    %step3%\n</div>\n<script>\n</script>\n"
+      }
+    ],
+    "ReturnValue": null
+  },
+  "Text": "center content, horizontaly and vertically, give good padding",
+  "Reload": false,
+  "LlmQuestion": null,
+  "RunOnBuild": false
+}

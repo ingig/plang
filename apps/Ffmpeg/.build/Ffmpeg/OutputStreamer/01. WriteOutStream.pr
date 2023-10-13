@@ -1,0 +1,14 @@
+{
+  "Action": {
+    "FunctionName": "Write",
+    "Inputs": {
+      "text": "%stream%",
+      "writeToBuffer": "False"
+    },
+    "Outputs": {}
+  },
+  "Text": "write out %stream%",
+  "Reload": false,
+  "LlmQuestion": null,
+  "Tests": null
+}

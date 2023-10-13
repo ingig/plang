@@ -1,0 +1,16 @@
+{
+  "Action": [
+    {
+      "FunctionName": "SetVariable",
+      "Inputs": {
+        "key": "ffmpegDone",
+        "value": true
+      },
+      "Outputs": {}
+    }
+  ],
+  "Text": "set %ffmpegDone% as true",
+  "Reload": false,
+  "LlmQuestion": null,
+  "Tests": null
+}

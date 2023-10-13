@@ -1,0 +1,19 @@
+{
+  "Action": [
+    {
+      "FunctionName": "Sleep",
+      "Parameters": [
+        {
+          "Type": "Int32",
+          "Name": "sleepTimeInMilliseconds",
+          "Value": "2000"
+        }
+      ],
+      "ReturnValue": null
+    }
+  ],
+  "Text": "wait 2 sec",
+  "Reload": false,
+  "LlmQuestion": null,
+  "Tests": null
+}

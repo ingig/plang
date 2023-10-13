@@ -1,0 +1,34 @@
+{
+  "GoalName": "ValidateIdentity",
+  "Method": null,
+  "Comment": null,
+  "GoalSteps": [
+    {
+      "Text": "if %Identity% is empty, give error \"You need to sign your requests\"",
+      "Comment": null,
+      "ModuleType": "ConditionalModule",
+      "Name": "CheckIdentity",
+      "Description": "Check if the variable 'Identity' is empty. If it is, an error message 'You need to sign your requests' is displayed.",
+      "File": "01. CheckIdentity.pr",
+      "Indent": 0,
+      "Execute": true,
+      "RunOnce": false,
+      "Executed": null,
+      "Generated": "0001-01-01T00:00:00",
+      "WaitForReply": false,
+      "ErrorHandler": {
+        "IgnoreErrors": false,
+        "Except": null
+      },
+      "RetryHandler": {
+        "RetryCount": 0,
+        "RetryDelayInMilliseconds": 0
+      },
+      "Custom": {},
+      "Number": 0,
+      "LlmQuestion": null
+    }
+  ],
+  "Description": null,
+  "FolderPath": "c:\\Users\\Ingi Gauti\\source\\repos\\ingig\\PLangExamples\\apps\\HttpRequestWithSignature\\.build\\ValidateIdentity"
+}

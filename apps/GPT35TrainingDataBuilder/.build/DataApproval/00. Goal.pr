@@ -1,0 +1,59 @@
+{
+  "GoalName": "DataApproval",
+  "Method": null,
+  "Comment": null,
+  "GoalSteps": [
+    {
+      "Text": "select * from fine_tuning where isValid is null, write into %data%",
+      "Comment": null,
+      "ModuleType": "DbModule",
+      "Name": "SelectData",
+      "Description": "Select all records from the 'fine_tuning' table where the 'isValid' field is null and store the result into the 'data' variable",
+      "File": "01. SelectData.pr",
+      "Indent": 0,
+      "Execute": true,
+      "RunOnce": false,
+      "Executed": null,
+      "Generated": "0001-01-01T00:00:00",
+      "WaitForReply": true,
+      "ErrorHandler": {
+        "IgnoreErrors": false,
+        "Except": null
+      },
+      "RetryHandler": {
+        "RetryCount": 0,
+        "RetryDelayInMilliseconds": 0
+      },
+      "Custom": {},
+      "Number": 0,
+      "LlmQuestion": null
+    },
+    {
+      "Text": "loop through %data% call Question",
+      "Comment": null,
+      "ModuleType": "LoopModule",
+      "Name": "LoopThroughData",
+      "Description": "Iterate through each item in the %data% variable and call the function 'Question' for each item.",
+      "File": "02. LoopThroughData.pr",
+      "Indent": 0,
+      "Execute": true,
+      "RunOnce": false,
+      "Executed": null,
+      "Generated": "0001-01-01T00:00:00",
+      "WaitForReply": true,
+      "ErrorHandler": {
+        "IgnoreErrors": false,
+        "Except": null
+      },
+      "RetryHandler": {
+        "RetryCount": 0,
+        "RetryDelayInMilliseconds": 0
+      },
+      "Custom": {},
+      "Number": 0,
+      "LlmQuestion": null
+    }
+  ],
+  "Description": null,
+  "FolderPath": "C:\\Users\\Ingi Gauti\\source\\repos\\ingig\\PLangExamples\\apps\\GPT35TrainingDataBuilder\\.build\\DataApproval"
+}

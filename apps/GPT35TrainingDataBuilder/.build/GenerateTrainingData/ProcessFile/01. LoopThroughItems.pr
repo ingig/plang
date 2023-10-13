@@ -1,0 +1,10 @@
+{
+  "Action": {
+    "CallGoal": "ProcessQuestion",
+    "Variable": "item"
+  },
+  "Text": "go through each %item% call !ProcessQuestion",
+  "Reload": false,
+  "LlmQuestion": null,
+  "Tests": null
+}

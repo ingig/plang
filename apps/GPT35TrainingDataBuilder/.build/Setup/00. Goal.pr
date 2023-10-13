@@ -1,0 +1,59 @@
+{
+  "GoalName": "Setup",
+  "Method": null,
+  "Comment": null,
+  "GoalSteps": [
+    {
+      "Text": "create table fine_tuning,\n    columns id(primary), hash(text, not null, unique), system(text, not null), assistant(text, not null), user(text, not null), answer(text, not null), \n        created(datetime, not null, default now), isValid(bool, null, default null), processed(datetime, null), category(enum, 'training'|'test|bad', null)",
+      "Comment": null,
+      "ModuleType": "DbModule",
+      "Name": "CreateDatabaseTable",
+      "Description": "Create a new table named 'fine_tuning' in the database with the following columns: 'id' (primary key), 'hash' (text, not null, unique), 'system' (text, not null), 'assistant' (text, not null), 'user' (text, not null), 'answer' (text, not null), 'created' (datetime, not null, default now), 'isValid' (bool, null, default null), 'processed' (datetime, null), and 'category' (enum, 'training'|'test|bad', null).",
+      "File": "01. CreateDatabaseTable.pr",
+      "Indent": 0,
+      "Execute": true,
+      "RunOnce": true,
+      "Executed": "2023-08-29T09:28:47.9547927+00:00",
+      "Generated": "0001-01-01T00:00:00",
+      "WaitForReply": true,
+      "ErrorHandler": {
+        "IgnoreErrors": false,
+        "Except": null
+      },
+      "RetryHandler": {
+        "RetryCount": 0,
+        "RetryDelayInMilliseconds": 0
+      },
+      "Custom": {},
+      "Number": 0,
+      "LlmQuestion": null
+    },
+    {
+      "Text": "add column type(string, not null) to fine_tuning",
+      "Comment": null,
+      "ModuleType": "DbModule",
+      "Name": "AddColumnToDatabase",
+      "Description": "Add a new column of type string and not null to the 'fine_tuning' table in the database.",
+      "File": "02. AddColumnToDatabase.pr",
+      "Indent": 0,
+      "Execute": true,
+      "RunOnce": true,
+      "Executed": "2023-08-29T10:23:00.098208+00:00",
+      "Generated": "0001-01-01T00:00:00",
+      "WaitForReply": true,
+      "ErrorHandler": {
+        "IgnoreErrors": false,
+        "Except": null
+      },
+      "RetryHandler": {
+        "RetryCount": 0,
+        "RetryDelayInMilliseconds": 0
+      },
+      "Custom": {},
+      "Number": 0,
+      "LlmQuestion": null
+    }
+  ],
+  "Description": null,
+  "FolderPath": "C:\\Users\\Ingi Gauti\\source\\repos\\ingig\\PLangExamples\\apps\\GPT35TrainingDataBuilder\\.build\\Setup"
+}

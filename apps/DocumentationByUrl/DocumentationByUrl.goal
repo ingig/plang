@@ -1,0 +1,11 @@
+DocByUrl
+- if %Step.Comment% starts with http
+    - extract url from %Step.Comment%, write to %url%
+    - call GetDoc
+
+GetDoc
+- GET %url%, write into %html%
+- if %cssSelect% (string) is not empty then
+    - extract content from %html% using %cssSelect%, clear html, write to %__Docs__%
+- if %cssSelect% (string) is empty then
+    - set var %__Docs__% to %html.ClearHtml()%

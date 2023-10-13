@@ -1,0 +1,3 @@
+Start
+- set var %text% to "Hello plang"
+- write out %text%

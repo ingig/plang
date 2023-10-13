@@ -1,0 +1,129 @@
+{
+  "GoalName": "Ffmpeg",
+  "Method": null,
+  "Comment": null,
+  "GoalSteps": [
+    {
+      "Text": "when variable %stream% is changed, call OutputStreamer",
+      "Comment": null,
+      "ModuleType": "LocalOrGlobalVariableModule",
+      "Name": "OutputStreamerCall",
+      "Description": "When the variable %stream% changes, the function OutputStreamer is called.",
+      "File": "01. OutputStreamerCall.pr",
+      "Indent": 0,
+      "Execute": true,
+      "RunOnce": false,
+      "Executed": null,
+      "Generated": "0001-01-01T00:00:00",
+      "WaitForReply": true,
+      "ErrorHandler": {
+        "IgnoreErrors": false,
+        "Except": null
+      },
+      "RetryHandler": {
+        "RetryCount": 0,
+        "RetryDelayInMilliseconds": 0
+      },
+      "Custom": {},
+      "Number": 0
+    },
+    {
+      "Text": "use ffmpeg to convert video/sample.mp4 to audio/sample.mp3, overwrite existing file, write debug info to %stream%",
+      "Comment": null,
+      "ModuleType": "TerminalModule",
+      "Name": "ConvertVideoToAudio",
+      "Description": "Use ffmpeg to convert a video file located at 'video/sample.mp4' to an audio file 'audio/sample.mp3'. If the audio file already exists, overwrite it. Write any debug information to the variable %stream%.",
+      "File": "02. ConvertVideoToAudio.pr",
+      "Indent": 0,
+      "Execute": true,
+      "RunOnce": false,
+      "Executed": null,
+      "Generated": "2023-08-23T09:32:17.4407395+00:00",
+      "WaitForReply": true,
+      "ErrorHandler": {
+        "IgnoreErrors": false,
+        "Except": null
+      },
+      "RetryHandler": {
+        "RetryCount": 0,
+        "RetryDelayInMilliseconds": 0
+      },
+      "Custom": {},
+      "Number": 1
+    },
+    {
+      "Text": "set %ffmpegDone% as true",
+      "Comment": null,
+      "ModuleType": "LocalOrGlobalVariableModule",
+      "Name": "SetFfmpegDone",
+      "Description": "Set the variable %ffmpegDone% to true",
+      "File": "03. SetFfmpegDone.pr",
+      "Indent": 0,
+      "Execute": true,
+      "RunOnce": false,
+      "Executed": null,
+      "Generated": "0001-01-01T00:00:00",
+      "WaitForReply": true,
+      "ErrorHandler": {
+        "IgnoreErrors": false,
+        "Except": null
+      },
+      "RetryHandler": {
+        "RetryCount": 0,
+        "RetryDelayInMilliseconds": 0
+      },
+      "Custom": {},
+      "Number": 0
+    },
+    {
+      "Text": "wait 7 sec",
+      "Comment": null,
+      "ModuleType": "ScheduleModule",
+      "Name": "WaitForSevenSeconds",
+      "Description": "Pause the execution of the function for seven seconds.",
+      "File": "04. WaitForSevenSeconds.pr",
+      "Indent": 0,
+      "Execute": true,
+      "RunOnce": false,
+      "Executed": null,
+      "Generated": "0001-01-01T00:00:00",
+      "WaitForReply": false,
+      "ErrorHandler": {
+        "IgnoreErrors": false,
+        "Except": null
+      },
+      "RetryHandler": {
+        "RetryCount": 0,
+        "RetryDelayInMilliseconds": 0
+      },
+      "Custom": {},
+      "Number": 0
+    },
+    {
+      "Text": "write out 'Is ffmpegDone: %ffmpegDone%'",
+      "Comment": null,
+      "ModuleType": "OutputModule",
+      "Name": "WriteOutput",
+      "Description": "Write out the string 'Is ffmpegDone: ' followed by the value of the variable %ffmpegDone%",
+      "File": "05. WriteOutput.pr",
+      "Indent": 0,
+      "Execute": true,
+      "RunOnce": false,
+      "Executed": null,
+      "Generated": "0001-01-01T00:00:00",
+      "WaitForReply": true,
+      "ErrorHandler": {
+        "IgnoreErrors": false,
+        "Except": null
+      },
+      "RetryHandler": {
+        "RetryCount": 0,
+        "RetryDelayInMilliseconds": 0
+      },
+      "Custom": {},
+      "Number": 0
+    }
+  ],
+  "Description": null,
+  "FolderPath": "C:\\Users\\Ingi Gauti\\source\\repos\\ingig\\plang\\apps\\Ffmpeg\\.build\\Ffmpeg"
+}

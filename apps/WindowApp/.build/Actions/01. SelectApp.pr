@@ -1,0 +1,7 @@
+{
+  "Action": {},
+  "Text": "askllm:\n    system: Your job is to select the correct app to use from the user request. \n        You MUST return in json scheme:{app:string}\n    assistant: === Available apps ===\n     %__Apps__% \n    === Available modules ===\n    user: %search% ",
+  "Reload": false,
+  "LlmQuestion": null,
+  "Tests": null
+}

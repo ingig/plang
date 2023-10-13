@@ -1,0 +1,13 @@
+Start
+- insert into comments table set text=%text%, write to %id%
+- select all from comments, write to %comments%
+- select id from comments where id=%id%, write to %rowId%
+- if %rowId% is null  then
+    - write out 'row id is null'
+- if %rowId% is not null then, return true 
+    - write out 'row id is NOT null'
+- write out %comments.ToJson()%
+- foreach %comments% call !WriteOut
+
+WriteOut
+- write out %item.text%

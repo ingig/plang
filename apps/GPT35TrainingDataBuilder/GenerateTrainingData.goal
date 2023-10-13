@@ -1,0 +1,12 @@
+GenerateTrainingData
+- read all questions.json in path ../ and subfolders, into %files%
+- go through each %files%, call !ProcessFile
+
+ProcessFile
+- go through each %item% call !ProcessQuestion
+
+ProcessQuestion
+- select id from fine_tuning where hash=%item.hash%, write to %id%
+- if %id% is empty then
+    - insert into fine_tuning, system=%item.question.system%, assistant=%item.question.assistant%, 
+        user=%item.question.question%, answer=%item.question.RawResponse%, hash=%item.hash%, type=%item.question.type%

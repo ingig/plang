@@ -1,0 +1,84 @@
+{
+  "GoalName": "ProcessQuestion",
+  "Method": null,
+  "Comment": null,
+  "GoalSteps": [
+    {
+      "Text": "select id from fine_tuning where hash=%item.hash%, write to %id%",
+      "Comment": null,
+      "ModuleType": "DbModule",
+      "Name": "SelectIdFromDatabase",
+      "Description": "Select the 'id' from the 'fine_tuning' table in the database where the 'hash' column matches the value of the variable '%item.hash%'. The result is then written to the variable '%id%'.",
+      "File": "01. SelectIdFromDatabase.pr",
+      "Indent": 0,
+      "Execute": true,
+      "RunOnce": false,
+      "Executed": null,
+      "Generated": "0001-01-01T00:00:00",
+      "WaitForReply": true,
+      "ErrorHandler": {
+        "IgnoreErrors": false,
+        "Except": null
+      },
+      "RetryHandler": {
+        "RetryCount": 0,
+        "RetryDelayInMilliseconds": 0
+      },
+      "Custom": {},
+      "Number": 0,
+      "LlmQuestion": null
+    },
+    {
+      "Text": "if %id% is empty then",
+      "Comment": null,
+      "ModuleType": "ConditionalModule",
+      "Name": "CheckIfIdIsEmpty",
+      "Description": "Check if the variable 'id' is empty",
+      "File": "02. CheckIfIdIsEmpty.pr",
+      "Indent": 0,
+      "Execute": true,
+      "RunOnce": false,
+      "Executed": null,
+      "Generated": "0001-01-01T00:00:00",
+      "WaitForReply": true,
+      "ErrorHandler": {
+        "IgnoreErrors": false,
+        "Except": null
+      },
+      "RetryHandler": {
+        "RetryCount": 0,
+        "RetryDelayInMilliseconds": 0
+      },
+      "Custom": {},
+      "Number": 0,
+      "LlmQuestion": null
+    },
+    {
+      "Text": "insert into fine_tuning, system=%item.question.system%, assistant=%item.question.assistant%,\n        user=%item.question.question%, answer=%item.question.RawResponse%, hash=%item.hash%, type=%item.question.type%",
+      "Comment": null,
+      "ModuleType": "DbModule",
+      "Name": "InsertIntoFineTuning",
+      "Description": "Insert into the 'fine_tuning' table the values of system, assistant, user, answer, hash, and type from the 'item.question' object.",
+      "File": "03. InsertIntoFineTuning.pr",
+      "Indent": 4,
+      "Execute": false,
+      "RunOnce": false,
+      "Executed": null,
+      "Generated": "0001-01-01T00:00:00",
+      "WaitForReply": false,
+      "ErrorHandler": {
+        "IgnoreErrors": false,
+        "Except": null
+      },
+      "RetryHandler": {
+        "RetryCount": 0,
+        "RetryDelayInMilliseconds": 0
+      },
+      "Custom": {},
+      "Number": 0,
+      "LlmQuestion": null
+    }
+  ],
+  "Description": null,
+  "FolderPath": "C:\\Users\\Ingi Gauti\\source\\repos\\ingig\\PLangExamples\\apps\\GPT35TrainingDataBuilder\\.build\\GenerateTrainingData\\ProcessQuestion"
+}

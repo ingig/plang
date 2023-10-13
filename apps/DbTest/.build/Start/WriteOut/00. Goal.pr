@@ -1,0 +1,36 @@
+{
+  "GoalName": "WriteOut",
+  "Method": null,
+  "Comment": null,
+  "GoalSteps": [
+    {
+      "Text": "write out %item.text%",
+      "Comment": null,
+      "ModuleType": "PLang.Modules.OutputModule",
+      "Name": "WriteOutItemText",
+      "Description": "Write out the text contained in the variable 'item.text'",
+      "PrFileName": "01. WriteOutItemText.pr",
+      "RelativePrPath": ".build\\Start\\WriteOut\\01. WriteOutItemText.pr",
+      "Indent": 0,
+      "Execute": true,
+      "RunOnce": false,
+      "Executed": null,
+      "Generated": "0001-01-01T00:00:00",
+      "WaitForExecution": true,
+      "ErrorHandler": null,
+      "RetryHandler": null,
+      "CacheHandler": null,
+      "CancellationHandler": null,
+      "Custom": {},
+      "Number": 0,
+      "LlmQuestion": null
+    }
+  ],
+  "Description": null,
+  "Visbility": 1,
+  "GoalFileName": "Start.goal",
+  "RelativeGoalPath": "\\Start.goal",
+  "RelativeGoalFolderPath": "\\",
+  "RelativePrPath": ".build\\Start\\WriteOut\\00. Goal.pr",
+  "RelativePrFolderPath": ".build\\Start\\WriteOut"
+}

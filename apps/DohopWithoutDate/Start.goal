@@ -1,0 +1,27 @@
+Start
+- open browser, use my session, headless
+- go to website dohop.is
+- input %origin% into #origin
+- wait 2 sec
+- sendkey \t
+- input "%destination%" into #destination
+- wait 2 sec
+- sendkey \t
+- click <button class="Button Button--fill Button--submit Button--form" type="submit">Leita</button>
+- switch to tab nr 2
+- wait 7 sec
+- extract .Itinerary__collapsed into %html%
+- close browser
+- [LLm] system: format user content to json
+				price should be a number 
+				dophop_id is a string and should be created using airlines_origin_destination_price_start_date_end_date
+				scheme [{dophop_id(combine all properties), airlines, origin, destination, price, start_time, end_time, start_date, end_date }, ...]
+	user: %html% 
+	write to %flights% 
+- go through each %flights%, item=flight, call !SaveFlight
+
+SaveFlight
+- select id from flights where dohop_id=%flight.dohop_id%, write to %id%
+- if %id% is null then
+	- insert into flights %flight.dohop_id%, %flight.airlines%, %flight.origin%, %flight.destination%
+		%flight.price%, %flight.start_time%, %flight.end_time%, %flight.start_date%, %flight.end_date%

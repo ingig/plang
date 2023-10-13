@@ -1,0 +1,35 @@
+{
+  "GoalName": "WriteContent",
+  "Method": null,
+  "Comment": null,
+  "GoalSteps": [
+    {
+      "Text": "Write out %messages%",
+      "Comment": null,
+      "ModuleType": "PLang.Modules.OutputModule",
+      "Name": "WriteOutMessages",
+      "Description": "Write out the content of the variable 'messages' to the user interface.",
+      "PrFileName": "01. WriteOutMessages.pr",
+      "RelativePrPath": ".build\\Messages\\WriteContent\\01. WriteOutMessages.pr",
+      "Indent": 0,
+      "Execute": true,
+      "RunOnce": false,
+      "Executed": null,
+      "Generated": "0001-01-01T00:00:00",
+      "WaitForExecution": true,
+      "ErrorHandler": null,
+      "RetryHandler": null,
+      "CacheHandler": null,
+      "Custom": {},
+      "Number": 0,
+      "LlmQuestion": null
+    }
+  ],
+  "Description": null,
+  "Visbility": 1,
+  "GoalFileName": "Messages.goal",
+  "RelativeGoalPath": "\\Messages.goal",
+  "RelativeGoalFolderPath": "\\",
+  "RelativePrPath": ".build\\Messages\\WriteContent\\00. Goal.pr",
+  "RelativePrFolderPath": ".build\\Messages\\WriteContent"
+}

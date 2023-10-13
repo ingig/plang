@@ -1,0 +1,25 @@
+{
+  "Action": {
+    "FunctionName": "AskLlm",
+    "Inputs": {
+      "system": "You should select goalName that fits best with user request you must return json, scheme: {goalName:string, appType:window|console, parameters:object}",
+      "assistant": "%info%",
+      "user": "%search%",
+      "scheme": "{goalName:string, appType:window|console, parameters:object}"
+    },
+    "Outputs": {}
+  },
+  "Text": "askllm:\n    system: You should select goalName that fits best with user request \n        you must return json, scheme: {goalName:string, appType:window|console, parameters:object}\n    assistant: %info%\n    user: %search%        ",
+  "Reload": false,
+  "LlmQuestion": {
+    "system": "\r\n\t\t\tParse user command.\r\n\r\nSelect the correct function from list of available functions based on user command\r\n\r\nvariable is defined with starting and ending %, e.g. %filePath%\r\n\r\nIf there is some api key, settings, config replace it with %Settings.Get(\"settingName\", \"defaultValue\", \"Explain\")%\r\nwhere the settingName would be the api key, config key, \r\ndefaultValue is the usual value given, make it \"\" if no value can be default\r\nExplain is an explanation about the setting that novice user can understand.\r\n\r\nInputs: are parameters that are required for the function and %variables% needed\r\nOutputs: Dictionary<string, string> where key is type of return, value is variable name, if function is not void. Use best matching defined variable, override the variable if needed\r\nFunctionName: Name of the function to use from list of functions, if no function matches set as \"N/A\"\r\n\\r\\n\\r\\nYou MUST respond in JSON, scheme\\r\\n \"Action\": {\r\n  \"FunctionName\": \"String\",\r\n  \"Inputs\": {\r\n    \"key\": \"String\",\r\n    \"value\": \"Object\"\r\n  },\r\n  \"Outputs\": {\r\n    \"key\": \"String\",\r\n    \"value\": \"Object\"\r\n  }\r\n}",
+    "question": "command: askllm:\n    system: You should select goalName that fits best with user request \n        you must return json, scheme: {goalName:string, appType:window|console, parameters:object}\n    assistant: %info%\n    user: %search%        ",
+    "assistant": "\r\n## functions available defined in csharp ##\r\nAskLlm(String system, String assistant, String user, String scheme, String? model = gpt-4, Double? tempature = 0, Double? topP = 0, Double? frequencyPenalty = 0, Double? presencePenalty = 0, Boolean? cacheResponse = True)\nGetAppPath(String? appName)\n\r\n## functions available ends ##\r\n## defined variables ##\r\n{}\r\n## defined variables ##\nThe following user request is for for constructing a message to LLM engine\r\n\r\nDetermine what part is system, assistant and user properties. If you cannot map it, the whole user request should be on user property\r\nDetermine the scheme, it is the json scheme that the llm is expected to return, this is required and cannot be empty string\r\n",
+    "model": "gpt-4",
+    "caching": true,
+    "Reload": false,
+    "PreviousResult": null,
+    "RawResponse": "{\n  \"Action\": {\n    \"FunctionName\": \"AskLlm\",\n    \"Inputs\": {\n      \"system\": \"You should select goalName that fits best with user request you must return json, scheme: {goalName:string, appType:window|console, parameters:object}\",\n      \"assistant\": \"%info%\",\n      \"user\": \"%search%\",\n      \"scheme\": \"{goalName:string, appType:window|console, parameters:object}\"\n    },\n    \"Outputs\": {}\n  }\n}"
+  },
+  "Tests": null
+}

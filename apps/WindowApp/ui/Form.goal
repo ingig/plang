@@ -1,0 +1,11 @@
+Form
+- centered horizontaly and vertically
+- form
+    - create fieldset for 'User info', 
+        inputs: Name, Email, Phone
+    - html divider
+    - create input password
+        min length=8
+        pattern=""
+    - submit button, "Save"
+        call !SaveUserInfo

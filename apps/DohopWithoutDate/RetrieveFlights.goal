@@ -1,0 +1,3 @@
+RetreiveFlights
+- select * from flights, write to %flights%
+- write out %flights%

@@ -1,0 +1,20 @@
+DataApproval
+- select * from fine_tuning where isValid is null, write into %data%
+- loop through %data% call Question
+
+Question
+- ask user "
+    === System ===
+    %item.system%
+    === System ==
+    === Assistant ===
+    %item.assistant%
+    === Assistant ==
+    === Question ===
+    %item.user%
+    === Question ==
+    Are you happy with this?, Y/N", write to %result%
+- if %result% is "Y", %isValid% is true
+- update table fine_tuning where id=%item.id%, set isValid=%isValid%, processed=now
+
+

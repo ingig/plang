@@ -1,0 +1,10 @@
+{
+  "Action": {
+    "CallGoal": "!Messages",
+    "Variable": "messages"
+  },
+  "Text": "go through each %messages% call !Messages",
+  "Reload": false,
+  "LlmQuestion": null,
+  "Tests": null
+}

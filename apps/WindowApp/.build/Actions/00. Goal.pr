@@ -1,0 +1,153 @@
+{
+  "GoalName": "Actions",
+  "Method": null,
+  "Comment": null,
+  "GoalSteps": [
+    {
+      "Text": "askllm:\n    system: Your job is to select the correct app to use from the user request. \n        You MUST return in json scheme:{app:string}\n    assistant: === Available apps ===\n     %__Apps__% \n    === Available modules ===\n    user: %search% ",
+      "Comment": null,
+      "ModuleType": "ListDictionaryModule",
+      "Name": "SelectApp",
+      "Description": "The assistant is required to select the correct application based on the user's request. The selection should be returned in a JSON format with the key as 'app'.",
+      "File": "01. SelectApp.pr",
+      "Indent": 0,
+      "Execute": true,
+      "RunOnce": false,
+      "Executed": null,
+      "Generated": "0001-01-01T00:00:00",
+      "WaitForReply": true,
+      "ErrorHandler": {
+        "IgnoreErrors": false,
+        "Except": null
+      },
+      "RetryHandler": {
+        "RetryCount": 0,
+        "RetryDelayInMilliseconds": 0
+      },
+      "Custom": {},
+      "Number": 0
+    },
+    {
+      "Text": "read info.txt in /apps/%app% into %info%",
+      "Comment": null,
+      "ModuleType": "FileModule",
+      "Name": "ReadInfoFile",
+      "Description": "Read the contents of the file named 'info.txt' located in the '/apps/%app%' directory and store the contents into the variable '%info%'",
+      "File": "02. ReadInfoFile.pr",
+      "Indent": 0,
+      "Execute": true,
+      "RunOnce": false,
+      "Executed": null,
+      "Generated": "0001-01-01T00:00:00",
+      "WaitForReply": true,
+      "ErrorHandler": {
+        "IgnoreErrors": false,
+        "Except": null
+      },
+      "RetryHandler": {
+        "RetryCount": 0,
+        "RetryDelayInMilliseconds": 0
+      },
+      "Custom": {},
+      "Number": 0
+    },
+    {
+      "Text": "askllm:\n    system: You should select goalName that fits best with user request \n        you must return json, scheme: {goalName:string, appType:window|console, parameters:object}\n    assistant: %info%\n    user: %search%        ",
+      "Comment": null,
+      "ModuleType": "LlmModule",
+      "Name": "AskLLM",
+      "Description": "The system should select a goalName that best fits the user's request. The assistant will use the %info% variable and the user will provide the %search% variable. The response must be in JSON format with the scheme: {goalName:string, appType:window|console, parameters:object}",
+      "File": "03. AskLLM.pr",
+      "Indent": 0,
+      "Execute": true,
+      "RunOnce": false,
+      "Executed": null,
+      "Generated": "0001-01-01T00:00:00",
+      "WaitForReply": true,
+      "ErrorHandler": {
+        "IgnoreErrors": false,
+        "Except": null
+      },
+      "RetryHandler": {
+        "RetryCount": 0,
+        "RetryDelayInMilliseconds": 0
+      },
+      "Custom": {},
+      "Number": 0
+    },
+    {
+      "Text": "call %app%.%goalName% %parameters%, write to %results%",
+      "Comment": null,
+      "ModuleType": "CallGoalModule",
+      "Name": "CallGoal",
+      "Description": "Call a specific goal within an application with provided parameters and store the results in a variable",
+      "File": "04. CallGoal.pr",
+      "Indent": 0,
+      "Execute": true,
+      "RunOnce": false,
+      "Executed": null,
+      "Generated": "0001-01-01T00:00:00",
+      "WaitForReply": true,
+      "ErrorHandler": {
+        "IgnoreErrors": false,
+        "Except": null
+      },
+      "RetryHandler": {
+        "RetryCount": 0,
+        "RetryDelayInMilliseconds": 0
+      },
+      "Custom": {},
+      "Number": 0
+    },
+    {
+      "Text": "if %appType% == console",
+      "Comment": null,
+      "ModuleType": "ConditionalModule",
+      "Name": "CheckAppType",
+      "Description": "Check if the variable 'appType' is equal to 'console'",
+      "File": "05. CheckAppType.pr",
+      "Indent": 0,
+      "Execute": true,
+      "RunOnce": false,
+      "Executed": null,
+      "Generated": "0001-01-01T00:00:00",
+      "WaitForReply": true,
+      "ErrorHandler": {
+        "IgnoreErrors": false,
+        "Except": null
+      },
+      "RetryHandler": {
+        "RetryCount": 0,
+        "RetryDelayInMilliseconds": 0
+      },
+      "Custom": {},
+      "Number": 0
+    },
+    {
+      "Text": "!ShowResult result=%results%",
+      "Comment": null,
+      "ModuleType": "OutputModule",
+      "Name": "ShowResult",
+      "Description": "Display the result stored in the variable %results%",
+      "File": "06. ShowResult.pr",
+      "Indent": 4,
+      "Execute": false,
+      "RunOnce": false,
+      "Executed": null,
+      "Generated": "0001-01-01T00:00:00",
+      "WaitForReply": true,
+      "ErrorHandler": {
+        "IgnoreErrors": false,
+        "Except": null
+      },
+      "RetryHandler": {
+        "RetryCount": 0,
+        "RetryDelayInMilliseconds": 0
+      },
+      "Custom": {},
+      "Number": 0
+    }
+  ],
+  "Description": null,
+  "FolderPath": "C:\\Users\\Ingi Gauti\\source\\repos\\ingig\\plang\\apps\\WindowApp\\.build\\Actions"
+}

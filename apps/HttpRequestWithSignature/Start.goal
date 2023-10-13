@@ -1,0 +1,10 @@
+Start
+- Call !DoRequest and forget
+- start webserver, port 13333
+
+DoRequest
+- wait 2 sec
+- GET http://localhost:13333/api/ShowIdentity.goal
+    sign the request
+    write to %response%
+- write out %response% to console

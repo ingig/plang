@@ -1,0 +1,18 @@
+{
+  "Action": [
+    {
+      "FunctionName": "OnChangeVariableListener",
+      "Inputs": {
+        "key": "stream",
+        "goalName": "OutputStreamer",
+        "appName": "",
+        "parameters": {}
+      },
+      "Outputs": {}
+    }
+  ],
+  "Text": "when variable %stream% is changed, call OutputStreamer",
+  "Reload": false,
+  "LlmQuestion": null,
+  "Tests": null
+}

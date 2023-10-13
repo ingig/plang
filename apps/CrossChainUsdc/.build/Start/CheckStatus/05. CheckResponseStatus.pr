@@ -1,0 +1,13 @@
+{
+  "Action": {
+    "Name": "ResponseStatusCheck",
+    "Code": "public static bool Process(string responseαstatus) {\n\treturn responseαstatus != \"complete\" ? false : true;\n}",
+    "Using": [
+      "System"
+    ],
+    "Parameters": {}
+  },
+  "Text": "if %response.status != \"complete\" then",
+  "Reload": false,
+  "LlmQuestion": null
+}

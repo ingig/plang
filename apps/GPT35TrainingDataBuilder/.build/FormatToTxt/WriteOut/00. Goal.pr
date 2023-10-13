@@ -1,0 +1,34 @@
+{
+  "GoalName": "WriteOut",
+  "Method": null,
+  "Comment": null,
+  "GoalSteps": [
+    {
+      "Text": "write \"\n    %item.role%\n    %item.content%\n    ====\" \n    to output/file output_%idx%.txt",
+      "Comment": null,
+      "ModuleType": "FileModule",
+      "Name": "WriteToFile",
+      "Description": "Write the values of 'item.role' and 'item.content' to a file named 'output_%idx%.txt'. Each value is written on a new line and separated by '===='.",
+      "File": "01. WriteToFile.pr",
+      "Indent": 0,
+      "Execute": true,
+      "RunOnce": false,
+      "Executed": null,
+      "Generated": "0001-01-01T00:00:00",
+      "WaitForReply": false,
+      "ErrorHandler": {
+        "IgnoreErrors": false,
+        "Except": null
+      },
+      "RetryHandler": {
+        "RetryCount": 0,
+        "RetryDelayInMilliseconds": 0
+      },
+      "Custom": {},
+      "Number": 0,
+      "LlmQuestion": null
+    }
+  ],
+  "Description": null,
+  "FolderPath": "C:\\Users\\Ingi Gauti\\source\\repos\\ingig\\PLangExamples\\apps\\GPT35TrainingDataBuilder\\.build\\FormatToTxt\\WriteOut"
+}
