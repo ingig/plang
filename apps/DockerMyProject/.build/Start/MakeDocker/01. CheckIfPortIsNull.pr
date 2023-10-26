@@ -1,0 +1,16 @@
+{
+  "Action": {
+    "Name": "CheckIfPortIsNull",
+    "Code": "public static bool Process(long? port) { return port == null; }",
+    "Using": null,
+    "Parameters": {
+      "port": "long?"
+    },
+    "GoalToCallOnTrue": null,
+    "GoalToCallOnFalse": null
+  },
+  "Text": "if %port% is null",
+  "Reload": false,
+  "LlmQuestion": null,
+  "RunOnBuild": false
+}

@@ -1,0 +1,37 @@
+/ This app will dockerize your plang app. 
+/ Call DockerMyProject path=.... and it will create a docker image for you
+Start
+- check directory exists %Settings.DirectoryPathToPlangLinux%, write to %plangPathExists%
+- if %plangPathExists%,call GetAccessToPath, call GetPlangPath
+
+GetAccessToPath
+- request access to path %path%, write to %hasAccess%
+- if %hasAccess%, call MakeDocker, call NoAccess
+
+NoAccess
+- write out, 'I dont have access'
+
+MakeDocker
+- if %port% is null
+    - set %port% to 10000
+- read content of 'Dockerfile', to %dockerContent%
+- load variables to %dockerContent%, write to %dockerContent%
+- delete folder %path%/.deploy/, even if there files
+- copy all files in %path% to %path%/.deploy/app, 
+    include subfolders
+    create folder if not exists, overwrite
+- create file "%path%/.deploy/Dockerfile", content %dockerContent%, overwrite
+- copy all files in %Settings.DirectoryPathToPlangLinux% to %path%/.deploy/plang, 
+    create folder if not exists, overwrite
+    include subfolders
+- if %imageName% is null
+    - [code] get folder name using GetFileName for %path%, all lowercase and not spaces or special characters(+,-,_), write to %imageName%
+- run cmd, app is 'docker', 
+    params: 'build -t %imageName% .'
+    start in %path%/.deploy
+- write out, 'Docker image is ready, you can find it at %path%/.deploy'
+
+GetPlangPath
+- ask user, 'What is the path to plang.exe?%extra%", write to %Settings.DirectoryPathToPlangLinux%%
+- check file exists %Settings.DirectoryPathToPlangLinux%, write to %plangPathExists%
+- if %plangPathExists%, call MakeDocker, call GetPlangPath extra=" Path was not found"

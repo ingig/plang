@@ -1,0 +1,9 @@
+ScreenCordinates
+- open https://chat.openai.com/, use my session
+- wait 2 sec
+- input '%message%, you must return json {x:int, y:int}' into #prompt-textarea
+- input %fileName% to input[type=file]
+- set focus on  'button[data-testid="send-button"]'
+- wait 2 sec
+- click on element 'button[data-testid="send-button"]'
+- sleep 5 min

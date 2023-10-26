@@ -1,0 +1,35 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "goal",
+            "request": "launch",
+            "name": "Debug with PLang",
+            "program": "${file}",
+            "args": [
+                "run",
+                "${input:parameterName}",
+                "--debug"
+            ],
+            "runtimeExecutable": "plang.exe",
+            "customParameter": "${input:parameterName}"
+        },
+        {
+            "type": "goal",
+            "request": "launchFile",
+            "name": "Debug file with PLang",
+            "program": "${file}",
+            "args": [
+                "run",
+                "file",
+                "${input:parameterName}",
+                "--debug"
+            ],
+            "runtimeExecutable": "plang.exe",
+            "customParameter": "${input:parameterName}"
+        }
+    ]
+}

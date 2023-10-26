@@ -1,0 +1,16 @@
+{
+  "Action": {
+    "Name": "PlangPathCheck",
+    "Code": "public static bool Process(bool plangPathExists) { return plangPathExists; }",
+    "Using": null,
+    "Parameters": {
+      "plangPathExists": "bool"
+    },
+    "GoalToCallOnTrue": "MakeDocker",
+    "GoalToCallOnFalse": "GetPlangPath"
+  },
+  "Text": "if %plangPathExists%, call MakeDocker, call GetPlangPath extra=\" Path was not found\"",
+  "Reload": false,
+  "LlmQuestion": null,
+  "RunOnBuild": false
+}

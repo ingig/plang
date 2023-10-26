@@ -1,0 +1,16 @@
+{
+  "Action": {
+    "Name": "HasAccessCheck",
+    "Code": "public static bool Process(bool hasAccess) { return hasAccess; }",
+    "Using": null,
+    "Parameters": {
+      "hasAccess": "bool"
+    },
+    "GoalToCallOnTrue": "MakeDocker",
+    "GoalToCallOnFalse": "NoAccess"
+  },
+  "Text": "if %hasAccess%, call MakeDocker, call NoAccess",
+  "Reload": false,
+  "LlmQuestion": null,
+  "RunOnBuild": false
+}

@@ -1,0 +1,18 @@
+{
+  "Action": {
+    "Name": "CheckIfImageNameIsNull",
+    "Code": "public static bool Process(string imageName) { return string.IsNullOrEmpty(imageName); }",
+    "Using": [
+      "System"
+    ],
+    "Parameters": {
+      "imageName": "string"
+    },
+    "GoalToCallOnTrue": null,
+    "GoalToCallOnFalse": null
+  },
+  "Text": "if %imageName% is null",
+  "Reload": false,
+  "LlmQuestion": null,
+  "RunOnBuild": false
+}

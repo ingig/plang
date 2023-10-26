@@ -1,0 +1,16 @@
+{
+  "Action": {
+    "Name": "PlangPathExistsCheck",
+    "Code": "\n    public static class PlangPathExistsCheck\n    {\n        public static bool Process(bool plangPathExists)\n        {\n            return plangPathExists;\n        }\n    }",
+    "Using": null,
+    "Parameters": {
+      "plangPathExists": "bool"
+    },
+    "GoalToCallOnTrue": "GetAccessToPath",
+    "GoalToCallOnFalse": "GetPlangPath"
+  },
+  "Text": "if %plangPathExists%,call GetAccessToPath, call GetPlangPath",
+  "Reload": false,
+  "LlmQuestion": null,
+  "RunOnBuild": false
+}
