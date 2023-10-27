@@ -10,7 +10,7 @@
     ],
     "ReturnValue": {
       "Type": "string",
-      "VariableName": "%Settings.DirectoryPathToPlangLinux%"
+      "VariableName": "Settings.DirectoryPathToPlangLinux"
     }
   },
   "Text": "ask user, 'What is the path to plang.exe?%extra%\", write to %Settings.DirectoryPathToPlangLinux%%",
@@ -24,7 +24,7 @@
     "caching": true,
     "Reload": false,
     "PreviousResult": null,
-    "RawResponse": "{\"FunctionName\": \"Ask\",\n\"Parameters\": [{\"Type\": \"string\",\n\"Name\": \"text\",\n\"Value\": \"What is the path to plang.exe?\"}],\n\"ReturnValue\": {\"Type\": \"string\",\n\"VariableName\": \"%Settings.DirectoryPathToPlangLinux%\"}}\n\n{\"FunctionName\": \"Write\",\n\"Parameters\": [{\"Type\": \"string\",\n\"Name\": \"text\",\n\"Value\": \"%Settings.DirectoryPathToPlangLinux%\"},\n{\"Type\": \"Boolean\",\n\"Name\": \"writeToBuffer\",\n\"Value\": false}],\n\"ReturnValue\": null}"
+    "RawResponse": "{\"FunctionName\": \"Ask\",\n\"Parameters\": [{\"Type\": \"string\",\n\"Name\": \"text\",\n\"Value\": \"What is the path to plang.exe?\"}],\n\"ReturnValue\": {\"Type\": \"string\",\n\"VariableName\": \"Settings.DirectoryPathToPlangLinux\"}}"
   },
   "RunOnBuild": false
 }

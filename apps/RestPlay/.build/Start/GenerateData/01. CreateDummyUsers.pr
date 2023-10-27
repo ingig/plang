@@ -1,0 +1,19 @@
+{
+  "Action": {
+    "Name": "CreateDummyUsers",
+    "Code": "\n    public static class CreateDummyUsers\n    {\n        public static void Process(out dynamic dummyUsers)\n        {\n            dummyUsers = new List<dynamic>();\n            var names = new List<string> { 'Michael', 'Dwight', 'Jim', 'Pam', 'Ryan', 'Andy', 'Robert', 'Angela', 'Kevin', 'Oscar' };\n            for (int i = 0; i < 10; i++)\n            {\n                dummyUsers.Add(new { Name = names[i], Email = names[i] + '@dundermifflin.com' });\n            }\n        }\n    }",
+    "Using": [
+      "System",
+      "System.Collections.Generic"
+    ],
+    "Parameters": {
+      "dummyUsers": "dynamic"
+    },
+    "GoalToCallOnTrue": null,
+    "GoalToCallOnFalse": null
+  },
+  "Text": "[code] create list with 10 users,\n    they have Name and Email.\n    Use names from the TV show The Office\n    write to %dummyUsers%",
+  "Reload": false,
+  "LlmQuestion": null,
+  "RunOnBuild": false
+}

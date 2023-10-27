@@ -1,0 +1,3 @@
+Client
+- get http://localhost:9090/api/Users, write to %users%
+- write  out %users%

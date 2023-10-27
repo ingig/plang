@@ -1,0 +1,21 @@
+{
+  "Action": {
+    "Name": "GetFolderName",
+    "Code": "public static void Process(string path, out string imageName)\n{\n    if(string.IsNullOrEmpty(path))\n    {\n        throw new Exception('Path cannot be null or empty.');\n    }\n    var fileName = Path.GetFileName(path);\n    imageName = Regex.Replace(fileName, '[^a-zA-Z0-9]', '').ToLower();\n}",
+    "Using": [
+      "System",
+      "System.IO",
+      "System.Text.RegularExpressions"
+    ],
+    "Parameters": {
+      "path": "string",
+      "imageName": "string"
+    },
+    "GoalToCallOnTrue": null,
+    "GoalToCallOnFalse": null
+  },
+  "Text": "[code] get folder name using GetFileName for %path%, all lowercase and not spaces or special characters(+,-,_), write to %imageName%",
+  "Reload": false,
+  "LlmQuestion": null,
+  "RunOnBuild": false
+}

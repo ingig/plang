@@ -26,7 +26,7 @@
     "caching": true,
     "Reload": false,
     "PreviousResult": null,
-    "RawResponse": "{\"FunctionName\": \"SetVariable\",\n\"Parameters\": [{\"Type\": \"String\",\n\"Name\": \"key\",\n\"Value\": \"port\"},\n{\"Type\": \"Object\",\n\"Name\": \"value\",\n\"Value\": 10000}]}"
+    "RawResponse": null
   },
   "RunOnBuild": false
 }

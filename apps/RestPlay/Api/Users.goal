@@ -1,0 +1,3 @@
+Users - GET
+- select all users, newest first, write to %users%
+- write  out %users%

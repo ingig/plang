@@ -26,7 +26,7 @@
     "caching": true,
     "Reload": false,
     "PreviousResult": null,
-    "RawResponse": "{\n\"FunctionName\": \"Write\",\n\"Parameters\": [\n    {\n    \"Type\": \"string\",\n    \"Name\": \"text\",\n    \"Value\": \"I dont have access\"\n    },\n    {\n    \"Type\": \"Boolean\",\n    \"Name\": \"writeToBuffer\",\n    \"Value\": false\n    }\n]\n}"
+    "RawResponse": null
   },
   "RunOnBuild": false
 }

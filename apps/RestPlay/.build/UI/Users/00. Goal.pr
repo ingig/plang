@@ -1,0 +1,51 @@
+{
+  "GoalName": "Users",
+  "Comment": null,
+  "GoalSteps": [
+    {
+      "Text": "table, 2rem margin\n    header:  Name, Email, Created, Actions\n    body: %users%\n        Created.ToString(\"d\")\n        Edit.goal,  '%user.id%'\n        Delete.goal, '%user.id%'\n        use font awesome",
+      "Comment": null,
+      "ModuleType": "PLang.Modules.HtmlModule",
+      "Name": "CreateTableWithMargin",
+      "Description": "Create a table with a 2rem margin. The table header includes 'Name', 'Email', 'Created', and 'Actions'. The body of the table is populated with user data. The 'Created' column is formatted to a string date. The 'Actions' column includes 'Edit' and 'Delete' goals, each associated with a unique user id. Font Awesome is used for icons.",
+      "PrFileName": "01. CreateTableWithMargin.pr",
+      "RelativePrPath": ".build\\UI\\Users\\01. CreateTableWithMargin.pr",
+      "Indent": 0,
+      "Execute": true,
+      "RunOnce": false,
+      "Executed": null,
+      "Generated": "2023-10-27T16:54:44.8065036+00:00",
+      "WaitForExecution": true,
+      "ErrorHandler": null,
+      "RetryHandler": null,
+      "CacheHandler": null,
+      "CancellationHandler": null,
+      "Custom": {},
+      "Number": 0,
+      "LineNumber": 1,
+      "LlmQuestion": {
+        "type": "StepBuilder",
+        "system": "You are provided with a statement from the user. \r\nThis statement is a step in a Function. \r\n\r\nYou MUST determine which module can be used to solve the statement. You MUST choose from available modules provided by the assistant to determine which module. If you cannot choose module, set N/A\r\n\r\nvariable is defined with starting and ending %, e.g. %filePath%\r\n! defines a call to a function\r\n\r\nModules: Name of module. Suggest 1-3 modules that could be used to solve the step.\r\nStepName: Short name for step\r\nStepDescription: Rewrite the step as you understand it, make it detailed\r\nWaitForExecution: Indicates if code should wait for execution to finish, default is true\r\nErrorHandler: How to handle errors, default is null\r\nRetryHandler: If should retry the step if there is error, null\r\nCachingHandler: How should caching be handled, default is null\r\nExternalServiceHandler : !GoalName? / http://example.org/api/run.goal | file.txt | https://docs.api.is/doc.html .startCssSelector .endCssSelect\r\nRead the description of each module, then determine which module to use\r\n\r\nYour response MUST be JSON, scheme\r\n{\"StepName\": string,\n\"StepDescription\": string,\n\"Modules\": string[],\n\"WaitForExecution\": boolean,\n\"CachingHandler\"?: {\"TimeInMilliseconds\": int64,\n\"CacheKey\": string,\n\"CachingType\": int32},\n\"ErrorHandler\"?: {\"IgnoreErrors\": boolean,\n\"Except\"?: string[]},\n\"RetryHandler\"?: {\"RetryCount\": int32,\n\"RetryDelayInMilliseconds\": int32}}\r\nBe Concise\r\n",
+        "question": "table, 2rem margin\n    header:  Name, Email, Created, Actions\n    body: %users%\n        Created.ToString(\"d\")\n        Edit.goal,  '%user.id%'\n        Delete.goal, '%user.id%'\n        use font awesome",
+        "assistant": "This is a list of modules you can choose from\r\n## modules available starts ##\r\n{ \"module\": \"PLang.Modules.HtmlModule\", \"description\": \"Takes any user command and tries to convert it to html\" }\r\n## modules available ends ##\r\n## CachingType int ##\r\nSliding = 0, Absolute = 1\r\n## CachingType int ##\r\n\r\n## variables available ##\r\n%users%(Object), \r\n## variables available ##\r\n",
+        "model": "gpt-4",
+        "caching": true,
+        "Reload": false,
+        "PreviousResult": null,
+        "RawResponse": null
+      }
+    }
+  ],
+  "Description": null,
+  "Visibility": 1,
+  "GoalFileName": "Users.goal",
+  "RelativeGoalPath": "\\UI\\Users.goal",
+  "RelativeGoalFolderPath": "\\UI",
+  "RelativePrPath": ".build\\UI\\Users\\00. Goal.pr",
+  "RelativePrFolderPath": ".build\\UI\\Users",
+  "ExternalApp": null,
+  "BuilderVersion": "0.1.0.0",
+  "GoalApiInfo": null,
+  "Injections": [],
+  "Signature": "6575b024d7856db5df5142e596f6494bb5a8aca20a47e4c45692ce564a1f4527"
+}

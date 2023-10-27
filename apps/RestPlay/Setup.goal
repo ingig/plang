@@ -1,0 +1,3 @@
+Setup
+- create table users, 
+    columns: Name, Email, Created(default now)

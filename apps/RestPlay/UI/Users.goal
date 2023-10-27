@@ -1,0 +1,22 @@
+Users
+- table, 2rem margin 
+    header:  Name, Email, Created, Actions
+    body: %users%
+        Created.ToString("d")
+        Edit.goal,  '%user.id%'
+        Delete.goal, '%user.id%'
+        use font awesome
+
+Edit
+- [db] select * from users where id=%id%, write to %user%
+- form, Name  and Email, 2rem margin
+    %user.Name%, %user.Email%, '%user.id%'
+    Save button, call !Save
+
+Save
+- [db] update users, %name%, %email%, where id=%id%
+- [call] call !LoadUsers
+
+Delete
+- [db] delete from users where id=%id%
+- call !LoadUsers

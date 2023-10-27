@@ -1,0 +1,18 @@
+Start
+- start window app, call LoadUsers
+/- start webserver, 9090
+/ - Call !GenerateData
+
+LoadUsers
+- call !api/users
+- call !ui/users
+
+GenerateData
+- [code] create list with 10 users, 
+    they have Name and Email.
+    Use names from the TV show The Office
+    write to %dummyUsers%
+- foreach %dummyUsers% call InsertData
+
+InsertData
+- insert into users %item.Name%, %item.Email%

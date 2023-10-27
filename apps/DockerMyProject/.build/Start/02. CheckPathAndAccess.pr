@@ -1,7 +1,7 @@
 {
   "Action": {
-    "Name": "PlangPathExistsCheck",
-    "Code": "\n    public static class PlangPathExistsCheck\n    {\n        public static bool Process(bool plangPathExists)\n        {\n            return plangPathExists;\n        }\n    }",
+    "Name": "PathAccess",
+    "Code": "\npublic static class PathAccess\n{\n    public static bool Process(bool plangPathExists)\n    {\n        return plangPathExists;\n    }\n}",
     "Using": null,
     "Parameters": {
       "plangPathExists": "bool"
