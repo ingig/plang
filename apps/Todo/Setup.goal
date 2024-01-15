@@ -1,0 +1,4 @@
+Setup
+- create table todos, columns: text(cannot empty), due_date(datetime), created(set current datetime as default), done(bool, 0)
+- insert into table todos text="Hello world", due_date=%Now%
+- alter table todos, add column: category(string)

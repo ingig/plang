@@ -1,0 +1,7 @@
+List
+- select everything from todos where not completed, order by newest, write to %todos%
+- [html] button, "New Task", call !/ui/New
+- table
+    header: Task, Category, Due Date, Created
+    body: text, category, due_date, created
+        action: Edit, call !Edit, parameter Id

@@ -1,7 +1,0 @@
-Conditions
-- set var 'Valid' as  true
-- if %Valid% (bool) then 
-    - write out 'It is valid'
-- set var 'NotValid' as false
-- if %NotValid% is false then
-    - write out 'Not valid variable is set to false'

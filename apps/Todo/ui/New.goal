@@ -1,0 +1,6 @@
+New
+- form
+- input text, required, min length 10
+- input type=datetime, name=due_date, required
+- checkbox, name=done
+- Save button, call !ui/Save.goal

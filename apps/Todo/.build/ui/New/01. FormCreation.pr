@@ -1,0 +1,27 @@
+{
+  "Action": {
+    "FunctionName": "RenderHtml",
+    "Parameters": [
+      {
+        "Type": "string",
+        "Name": "html",
+        "Value": "<form id=\"newForm\">\n    <div class=\"mb-3\">\n        <label for=\"inputText\" class=\"form-label\">Text</label>\n        <input type=\"text\" class=\"form-control\" id=\"inputText\" required minlength=\"10\">\n    </div>\n    <div class=\"mb-3\">\n        <label for=\"dueDate\" class=\"form-label\">Due Date</label>\n        <input type=\"datetime-local\" class=\"form-control\" id=\"dueDate\" required>\n    </div>\n    <div class=\"mb-3 form-check\">\n        <input type=\"checkbox\" class=\"form-check-input\" id=\"completed\">\n        <label class=\"form-check-label\" for=\"completed\">Completed</label>\n    </div>\n    <button type=\"submit\" class=\"btn btn-primary\" onclick=\"callGoal('Save.goal', {}); return false;\">Save</button>\n</form>"
+      }
+    ],
+    "ReturnValue": null
+  },
+  "Text": "form",
+  "Reload": false,
+  "LlmQuestion": {
+    "type": "PLang.Modules.HtmlModule.Builder",
+    "system": "Create the html, javascript and css needed from the user command using Bootstrap 5.1. \r\n\r\nGoal has series of steps, it is only to provide context. Steps start with dash(-), steps can have sub steps, they are indented\r\n\r\nVariables are defined with starting and ending %. They are case sensitive so keep them as defined\r\n\r\nGoals are prefixed with !, they are for calling a method, e.g. Call !NewUser or reference a goal, such as Edit.goal. To call it use javascript function callGoal(name:string, parameters:object)\r\nDO NOT generate the function callGoal, it will be provided\r\nAll object.Id or object.id are long and needs to be wrapped with single quote(')\r\nAll properties on variables are case sensitive, keep formatting defined by user.\r\n\r\nput the variable {content} where content should be  \r\n\r\nHTML comments and <!-- --> are NOT allowed\r\n\r\nJavascript should be vanilla Javascript. popper.min.js and bootstrap.min.js are available. \r\n\r\nUse @Razor templating engine for variables and to go through lists, displaying object or property, see example later\r\n\r\nCss should be using up to date css standards. colors should be in rgb.\r\n\r\nIf a feedback is needed to the user, provide the solution also for that, if it needs javascript, provide javascript, if it needs custom css, provide css\r\n\r\nYou must return ```html, ```css, ```javascript, \r\nNo extra text to explain, be concise\r\n\n\nOnly write the raw html and javascript no summary, no extra text to explain, be concise",
+    "question": "command: form",
+    "assistant": "\r\n### variables available ###\r\n\r\n### variables available ###\r\n### For context ###\r\n(Goal) New\n- (%step0%) form\n- (%step1%) input text, required, min length 10\n- (%step2%) input type=datetime, name=due_date, required\n- (%step3%) checkbox, completed\n- (%step4%) Save button, call !Save.goal\n\r\n### For context ###\r\n### Razor ###\r\nVariables in plural are lists, singular is object. \r\nTo access variable, prefix it with Model.\r\nuse the variable name as the name for the list and when looping through the list. \r\nExample for a tr in a table.\r\n\r\n@foreach (var task in Model.tasks)\r\n{\r\n    <tr>\r\n        <td>@task.Description</td>\r\n        <td>Due date: @task.DueDate</td>\r\n\t\t<td><a href=\"javascript:callGoal('edit.goal', {id:'@task.Id'})\">Edit</a></td>\r\n\t\t<td><button onclick=\"callGoal('delete.goal', {id:'@task.Id'})\">Delete</button></td>\r\n    </tr>\r\n}\r\n\r\n<h3>@Model.book.Title</h3>\r\n\r\n@{\r\n    bool isUserLoggedIn = Model.isLoggedIn;\r\n}\r\n\r\n@if (isUserLoggedIn)\r\n{\r\n    <p>Welcome back, @user.Username!</p>\r\n}\r\nelse\r\n{\r\n    <p>Please log in.</p>\r\n}\r\n### Razor ###",
+    "model": "gpt-4",
+    "caching": true,
+    "Reload": false,
+    "PreviousResult": null,
+    "RawResponse": "```html\n<form id=\"newForm\">\n    <div class=\"mb-3\">\n        <label for=\"inputText\" class=\"form-label\">Text</label>\n        <input type=\"text\" class=\"form-control\" id=\"inputText\" required minlength=\"10\">\n    </div>\n    <div class=\"mb-3\">\n        <label for=\"dueDate\" class=\"form-label\">Due Date</label>\n        <input type=\"datetime-local\" class=\"form-control\" id=\"dueDate\" required>\n    </div>\n    <div class=\"mb-3 form-check\">\n        <input type=\"checkbox\" class=\"form-check-input\" id=\"completed\">\n        <label class=\"form-check-label\" for=\"completed\">Completed</label>\n    </div>\n    <button type=\"submit\" class=\"btn btn-primary\" onclick=\"callGoal('Save.goal', {}); return false;\">Save</button>\n</form>\n```\n```css\n```\n```javascript\n```"
+  },
+  "RunOnBuild": false
+}

@@ -1,0 +1,27 @@
+{
+  "Action": {
+    "Name": "ConvertWindSpeed",
+    "Code": "\npublic static class ConvertWindSpeed\n{\n    public static void Process(string weatherαwind, out double windInMetersPerSecond)\n    {\n        if (string.IsNullOrEmpty(weatherαwind))\n            throw new Exception(\"Wind speed data is missing.\");\n\n        var windSpeedKmH = weatherαwind.Replace(\" km/h\", \"\");\n        if (!double.TryParse(windSpeedKmH, out double windSpeed))\n            throw new Exception(\"Invalid wind speed data.\");\n\n        windInMetersPerSecond = Math.Round(windSpeed * 1000 / 3600, 0);\n    }\n}\n",
+    "Using": [
+      "System"
+    ],
+    "Parameters": {
+      "weather.wind": "string",
+      "windInMetersPerSecond": "double"
+    },
+    "OutParameterDefinition": {
+      "windInMetersPerSecond": [
+        {
+          "Name": "windInMetersPerSecond",
+          "FullTypeName": "System.Double"
+        }
+      ]
+    },
+    "GoalToCallOnTrue": null,
+    "GoalToCallOnFalse": null
+  },
+  "Text": "[code] remove ' km/h' and convert %weather.wind%(string) (e.g. 6 km/h) to meters to seconds, round 0, write to %windInMetersPerSecond%",
+  "Reload": false,
+  "LlmQuestion": null,
+  "RunOnBuild": false
+}

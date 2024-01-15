@@ -1,6 +1,0 @@
-CallGoal
-- set variable %greetings% to 'Hello'
-- call !Show %greetings%
-
-Show
-- write out '%greetings% PLang world'

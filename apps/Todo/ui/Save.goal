@@ -1,0 +1,13 @@
+New
+- [var] set default value %done%, false
+- make sure %text% and %due_date% is not empty, throw error "text and due date cant be empty"
+- insert into table todos %text%, %due_date%, %done%, return %id%
+- clear cache 'todos'
+- call !Categories, run and forget
+- call !List
+
+Categories
+- [llm] system: Categories this todo list item into one of 3 categories, "Home", "Work", "Hobby"
+    user:%text%
+    scheme: {category:string}
+- update table todos set %category% where id=%id%

@@ -1,0 +1,15 @@
+List
+- select everything from todos, order by newest, write to %todos%
+    cache for 1 sec
+    retry 2 times over 2 sec period
+    on error, 
+        'no such table', call !Explain
+        'table exists', call !Explain2
+- write out %todos%
+
+Explain
+- write out 'There was an error'
+- write out %__Exception__%
+
+Explain2
+- write out 'There was an error'
